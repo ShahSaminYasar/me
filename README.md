@@ -1,1 +1,1 @@
-Portfolio website of [Shah Samin Yasar](https://shahsaminyasar.github.com/portfolio)
+Portfolio website of [Shah Samin Yasar](https://shahsaminyasar.github.io/portfolio)
