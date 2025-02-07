@@ -100,7 +100,7 @@ const About = () => {
           <div className="overflow-hidden">
             <span
               id="about_heading"
-              className="block text-5xl font-light text-white"
+              className="block text-3xl md:text-5xl font-light text-white"
             >
               <span className="text-primary-shade inline-block font-semibold">
                 Me

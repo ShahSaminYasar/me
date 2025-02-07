@@ -12,8 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Skills = () => {
   // States
   const [cardsContainerMoveX, setCardsContainerMoveX] = useState(0);
-  const [textOneMoveX, setTextOneMoveX] = useState(0);
-  const [textTwoMoveX, setTextTwoMoveX] = useState(0);
+  const [textMoveX, setTextMoveX] = useState(0);
 
   // Effects
   useEffect(() => {
@@ -28,14 +27,14 @@ const Skills = () => {
         trigger: "#section_skills",
         start: "top top",
         end: `+=${cardsContainerMoveX}`,
-        markers: true,
+        markers: false,
         scrub: true,
         pin: true,
       },
     });
 
     gsap.to("#skills_text_one", {
-      x: -textOneMoveX,
+      x: -textMoveX,
       duration: 20,
       ease: "none",
       repeat: -1,
@@ -49,7 +48,7 @@ const Skills = () => {
       repeat: -1,
       yoyo: true,
     });
-  }, [cardsContainerMoveX]);
+  }, [cardsContainerMoveX, textMoveX]);
 
   //   Functions
   const calculateTextNCardsContainerMoveX = () => {
@@ -60,23 +59,11 @@ const Skills = () => {
       "skills_cards_container"
     ).offsetWidth;
     let moveX = containerWidth - windowWidth / 2 + 32;
-    let textOneWidth = document.getElementById("skills_text_one").offsetWidth;
-    let textTwoWidth = document.getElementById("skills_text_two").offsetWidth;
-    let textMoveXOne = textOneWidth - skillsContainerWidth;
-    let textMoveXTwo = textTwoWidth - skillsContainerWidth;
+    let textWidth = document.getElementById("skills_text_one").offsetWidth;
+    let textMoveXValue = textWidth - skillsContainerWidth;
 
-    console.log(
-      window.innerWidth,
-      skillsContainerWidth,
-      textOneWidth,
-      textTwoWidth,
-      textMoveXOne,
-      textMoveXTwo
-    );
-    // console.log(textMoveX);
     setCardsContainerMoveX(moveX);
-    setTextOneMoveX(textMoveXOne);
-    setTextTwoMoveX(textMoveXTwo);
+    setTextMoveX(textMoveXValue);
   };
 
   return (
@@ -87,7 +74,7 @@ const Skills = () => {
       >
         <span
           id="about_heading"
-          className="block text-5xl font-light text-white"
+          className="block text-3xl md:text-5xl font-light text-white"
         >
           I{" "}
           <span className="text-primary-shade inline-block font-semibold">
@@ -182,7 +169,7 @@ const Skills = () => {
           id="skills_text_two"
           className={`text-6xl font-semibold text-white text-opacity-10 whitespace-nowrap block mb-6`}
           style={{
-            transform: `translateX(-${textTwoMoveX}px)`,
+            transform: `translateX(-${textMoveX}px)`,
           }}
         >
           React.js Next.js Node.js Express.js Javascript Typescript PhP Python C
