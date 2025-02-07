@@ -69,3 +69,20 @@ body {
     -webkit-transform: scale(1);
   }
 }
+
+/* Scroll Down Indicator Animation */
+#scroll_down_indicator .arrow {
+  animation: indicateScrollDown 2s ease infinite;
+}
+
+@keyframes indicateScrollDown {
+  0% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

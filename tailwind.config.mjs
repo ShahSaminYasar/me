@@ -10,6 +10,9 @@ export default {
       fontSize: {
         sm: "1rem",
       },
+      colors: {
+        "primary-shade": "#6F00C7",
+      },
     },
   },
   plugins: [require("daisyui")],
@@ -26,7 +29,6 @@ export default {
           success: "#36FF04",
           error: "#b01717",
           warning: "#e8c100",
-          "primary-light": "#6F00C7",
         },
       },
     ],
