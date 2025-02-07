@@ -41,13 +41,19 @@ const Skills = () => {
       yoyo: true,
     });
 
-    gsap.to("#skills_text_two", {
-      x: 0,
-      duration: 20,
-      ease: "none",
-      repeat: -1,
-      yoyo: true,
-    });
+    gsap.fromTo(
+      "#skills_text_two",
+      {
+        x: -textMoveX,
+      },
+      {
+        x: 0,
+        duration: 20,
+        ease: "none",
+        repeat: -1,
+        yoyo: true,
+      }
+    );
   }, [cardsContainerMoveX, textMoveX]);
 
   //   Functions
@@ -168,9 +174,6 @@ const Skills = () => {
         <span
           id="skills_text_two"
           className={`text-6xl font-semibold text-white text-opacity-10 whitespace-nowrap block mb-6`}
-          style={{
-            transform: `translateX(-${textMoveX}px)`,
-          }}
         >
           React.js Next.js Node.js Express.js Javascript Typescript PhP Python C
           MongoDB PostgreSQL Firebase TailwindCSS WordPress
