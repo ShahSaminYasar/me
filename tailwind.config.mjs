@@ -6,7 +6,29 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        sm: "1rem",
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        bashaLagbe: {
+          "base-100": "#1c1c1c",
+          bg: "#000000",
+          fg: "#FFFFFF",
+          primary: "#3F0071",
+          secondary: "#150050",
+          accent: "#FB2576",
+          success: "#36FF04",
+          error: "#b01717",
+          warning: "#e8c100",
+          "primary-light": "#6F00C7",
+        },
+      },
+    ],
+  },
 };
