@@ -110,7 +110,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="bg-black relative">
+    <section className="bg-black relative p-5">
       <Container
         className={`min-h-screen w-full flex flex-col gap-3 items-center justify-center`}
       >
@@ -118,7 +118,7 @@ const Hero = () => {
           <div className="flex flex-row justify-between items-center">
             <span
               id="hi"
-              className={`${indieFlower?.className} text-[1.25rem] block text-left opacity-0`}
+              className={`${indieFlower?.className} text-sm md:text-[1.25rem] block text-left opacity-0`}
             >
               Hi, I'm
             </span>
@@ -132,13 +132,16 @@ const Hero = () => {
           <div id="name_container" className="overflow-hidden">
             <h1
               id="name"
-              className="text-5xl font-medium uppercase my-1 mb-2 opacity-0"
+              className="text-3xl md:text-5xl font-medium uppercase md:my-1 md:mb-2 opacity-0"
             >
               Shah Samin Yasar
             </h1>
           </div>
           <div className="overflow-hidden">
-            <span id="title" className="block text-3xl font-thin opacity-0">
+            <span
+              id="title"
+              className="block text-xl md:text-3xl font-thin opacity-0"
+            >
               a <p className="inline-block">MERN Stack Developer</p>
             </span>
           </div>
@@ -147,7 +150,7 @@ const Hero = () => {
             id="cta_container"
             className="flex flex-row items-center justify-center gap-5 mt-7 relative opacity-0"
           >
-            <CTALink id="cv_btn" href="#" className={`mr-3`}>
+            <CTALink id="cv_btn" href="#" className={`mr-2 md:mr-3`}>
               <IoDocumentOutline />
               Download CV
             </CTALink>
@@ -186,7 +189,7 @@ const Hero = () => {
       </Container>
       <span
         id="liveStatusContainer"
-        className="text-sm font-light text-white text-opacity-60 flex flex-row items-center gap-1 absolute bottom-4 left-4 opacity-0"
+        className="text-xs md:text-sm font-light text-white text-opacity-60 flex flex-row items-center gap-1 absolute bottom-4 left-4 opacity-0"
       >
         <div className="livenow">
           <div></div>

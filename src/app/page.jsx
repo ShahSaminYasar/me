@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import About from "./sections/About";
 import Hero from "./sections/Hero";
 import Lenis from "lenis";
+import Skills from "./sections/Skills";
 
 export default function Home() {
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function Home() {
     <main>
       <Hero />
       <About />
+      <Skills />
     </main>
   );
 }

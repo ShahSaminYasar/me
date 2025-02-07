@@ -40,7 +40,7 @@ const About = () => {
       .from(
         "#about_description",
         {
-          y: -100,
+          y: "-100%",
           duration: 2.5,
         },
         "a"
@@ -66,7 +66,7 @@ const About = () => {
 
   return (
     <section id="section_about" className="relative mt-5">
-      <Container className={`grid grid-cols-3 gap-5`}>
+      <Container className={`grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-5`}>
         <div className="p-5 overflow-hidden">
           <div
             id="about_image_container"
@@ -94,7 +94,7 @@ const About = () => {
         </div>
 
         <div
-          className={`col-span-2 min-h-screen p-5 flex flex-col justify-center gap-4`}
+          className={`md:col-span-2 md:min-h-screen p-5 flex flex-col justify-center gap-4`}
         >
           {/* Heading */}
           <div className="overflow-hidden">
@@ -159,12 +159,12 @@ const About = () => {
             </span>
             <span className="relative">
               <span className="w-4 h-1 bg-primary-shade rounded-sm absolute top-[50%] -left-5 -translate-y-[50%]"></span>
-              😎 Experience: <span className="font-semibold">5 years</span>
+              😎 Experience: <span className="font-semibold">5+ years</span>
             </span>
           </div>
         </div>
       </Container>
-      <Decor_BG_Circle className={`left-[5%] bottom-[-20%]`} />
+      <Decor_BG_Circle className={`left-[5%] bottom-[20%]`} />
     </section>
   );
 };
