@@ -14,9 +14,53 @@ const Skills = () => {
   const [cardsContainerMoveX, setCardsContainerMoveX] = useState(0);
   const [textMoveX, setTextMoveX] = useState(0);
 
+  //   Functions
+  const calculateTextNCardsContainerMoveX = () => {
+    const windowWidth = window.innerWidth;
+    const container = document.getElementById("skills_container");
+    const cardsContainer = document.getElementById("skills_cards_container");
+    const textOne = document.getElementById("skills_text_one");
+
+    if (!container || !cardsContainer || !textOne) return; // Prevent errors
+
+    const containerWidth = container.offsetWidth;
+    const cardsContainerWidth = cardsContainer.offsetWidth;
+    const textWidth = textOne.offsetWidth;
+
+    const moveX = cardsContainerWidth - 125;
+    const textMoveXValue = textWidth - containerWidth;
+
+    setCardsContainerMoveX(moveX);
+    setTextMoveX(textMoveXValue);
+  };
+
   // Effects
   useEffect(() => {
     calculateTextNCardsContainerMoveX();
+  }, []);
+
+  useGSAP(() => {
+    gsap.from("#skills_heading", {
+      y: 100,
+      scrollTrigger: {
+        trigger: "#section_skills",
+        start: "top 90%",
+        end: "top 20%",
+        markers: false,
+        scrub: 1,
+      },
+    });
+
+    gsap.from("#skills_text_one, #skills_cards_container, #skills_text_two", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#section_skills",
+        start: "top 50%",
+        end: "top top",
+        markers: true,
+        scrub: 1,
+      },
+    });
   }, []);
 
   useGSAP(() => {
@@ -54,23 +98,9 @@ const Skills = () => {
         yoyo: true,
       }
     );
+
+    // ScrollTrigger.refresh();
   }, [cardsContainerMoveX, textMoveX]);
-
-  //   Functions
-  const calculateTextNCardsContainerMoveX = () => {
-    let windowWidth = window.innerWidth;
-    let skillsContainerWidth =
-      document.getElementById("skills_container").offsetWidth;
-    let containerWidth = document.getElementById(
-      "skills_cards_container"
-    ).offsetWidth;
-    let moveX = containerWidth - windowWidth / 2 + 32;
-    let textWidth = document.getElementById("skills_text_one").offsetWidth;
-    let textMoveXValue = textWidth - skillsContainerWidth;
-
-    setCardsContainerMoveX(moveX);
-    setTextMoveX(textMoveXValue);
-  };
 
   return (
     <section id="section_skills" className="px-5 relative my-20">
@@ -78,16 +108,18 @@ const Skills = () => {
         id="skills_container"
         className={`min-h-screen flex flex-col items-start justify-center`}
       >
-        <span
-          id="about_heading"
-          className="block text-3xl md:text-5xl font-light text-white"
-        >
-          I{" "}
-          <span className="text-primary-shade inline-block font-semibold">
-            specialize
-          </span>{" "}
-          in...
-        </span>
+        <div className="overflow-hidden min-h-[45px] md:min-h-[55px] w-full">
+          <span
+            id="skills_heading"
+            className="block text-4xl md:text-5xl font-light text-white"
+          >
+            I{" "}
+            <span className="text-primary-shade inline-block font-semibold">
+              specialize
+            </span>{" "}
+            in...
+          </span>
+        </div>
 
         {/* Skills Text */}
         <span
@@ -101,7 +133,7 @@ const Skills = () => {
         {/* Skill Cards */}
         <div
           id="skills_cards_container"
-          className="flex flex-row gap-8 flex-nowrap my-3 relative left-[50%]"
+          className="flex flex-row gap-8 flex-nowrap my-3 relative left-[50%] -translate-x-[125px]"
         >
           <SkillCard
             image={"/assets/logos/reactJS.png"}

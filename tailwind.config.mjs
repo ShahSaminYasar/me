@@ -11,7 +11,10 @@ export default {
         sm: "1rem",
       },
       colors: {
-        "primary-shade": "#6F00C7",
+        // "primary-shade": "#6F00C7",
+        "primary-shade": "#7770ff",
+        bg: "#000000",
+        fg: "#FFFFFF",
       },
     },
   },
@@ -21,10 +24,10 @@ export default {
       {
         bashaLagbe: {
           "base-100": "#1c1c1c",
-          bg: "#000000",
-          fg: "#FFFFFF",
-          primary: "#3F0071",
-          secondary: "#150050",
+          // primary: "#3F0071",
+          // secondary: "#150050",
+          primary: "#5142c7",
+          secondary: "#1c308a",
           accent: "#FB2576",
           success: "#36FF04",
           error: "#b01717",

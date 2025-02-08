@@ -14,7 +14,7 @@ const About = () => {
       scrollTrigger: {
         trigger: "#section_about",
         start: "-top 40%",
-        end: "top",
+        end: "top top",
         markers: false,
         scrub: true,
       },
@@ -40,28 +40,36 @@ const About = () => {
       .from(
         "#about_description",
         {
+          opacity: 0,
           y: "-100%",
           duration: 2.5,
         },
         "a"
-      )
-      .from(
-        "#about_list > span",
-        {
-          opacity: 0,
-          duration: 1,
-          stagger: 0.1,
-        },
-        "b"
-      )
-      .from(
-        "#about_list_bar",
-        {
-          height: 0,
-          duration: 2,
-        },
-        "b"
       );
+
+    gsap.from("#about_list > span", {
+      opacity: 0,
+      duration: 1,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: "#about_list",
+        start: "top 80%",
+        end: "bottom+=50px bottom",
+        markers: false,
+        scrub: 1,
+      },
+    });
+    gsap.from("#about_list_bar", {
+      height: 0,
+      duration: 2,
+      scrollTrigger: {
+        trigger: "#about_list",
+        start: "top 80%",
+        end: "bottom+=50px bottom",
+        markers: false,
+        scrub: 1,
+      },
+    });
   }, []);
 
   return (
@@ -87,14 +95,14 @@ const About = () => {
                 height={500}
                 priority={true}
                 alt="Shah Samin Yasar"
-                className="w-full h-full object-cover block rotate-[15deg] scale-110"
+                className="w-full h-full object-cover block rotate-[15deg] scale-125"
               />
             </div>
           </div>
         </div>
 
         <div
-          className={`md:col-span-2 md:min-h-screen p-5 flex flex-col justify-center gap-4`}
+          className={`md:col-span-2 md:min-h-screen p-5 pr-10 flex flex-col justify-center gap-4`}
         >
           {/* Heading */}
           <div className="overflow-hidden">

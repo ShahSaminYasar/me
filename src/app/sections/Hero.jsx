@@ -112,9 +112,9 @@ const Hero = () => {
   return (
     <section className="bg-black relative p-5">
       <Container
-        className={`min-h-screen w-full flex flex-col gap-3 items-center justify-center`}
+        className={`min-h-[100vh] md:min-h-screen w-full flex flex-col gap-3 items-center landscape:justify-center relative py-20`}
       >
-        <div>
+        <div className="portrait:mt-auto">
           <div className="flex flex-row justify-between items-center">
             <span
               id="hi"
@@ -146,61 +146,66 @@ const Hero = () => {
             </span>
           </div>
 
-          <div
-            id="cta_container"
-            className="flex flex-row items-center justify-center gap-5 mt-7 relative opacity-0"
+          <span
+            id="liveStatusContainer"
+            className="w-fit mx-auto text-xs md:text-sm font-light text-white text-opacity-60 flex flex-row items-center gap-1 opacity-0 mt-5"
           >
-            <CTALink id="cv_btn" href="#" className={`mr-2 md:mr-3`}>
-              <IoDocumentOutline />
-              Download CV
-            </CTALink>
-
-            <Link className="handle" href={`https://github.com/ShahSaminYasar`}>
-              <FiGithub className="text-xl text-white opacity-80" />
-            </Link>
-            <Link
-              className="handle"
-              href={`https://www.linkedin.com/in/shah-samin-yasar/`}
-            >
-              <FiLinkedin className="text-xl text-white opacity-80" />
-            </Link>
-            <Link
-              className="handle"
-              href={`https://instagram.com/shahsaminyasar`}
-            >
-              <FiInstagram className="text-xl text-white opacity-80" />
-            </Link>
-            <Link
-              className="handle"
-              href={`https://facebook.com/shah_samin_yasar`}
-            >
-              <FiFacebook className="text-xl text-white opacity-80" />
-            </Link>
-
+            <div className="livenow">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>{" "}
+            LIVE status:{" "}
             <span
-              id="scroll_down_indicator"
-              className="flex flex-col items-center justify-center absolute left-[50%] -translate-x-[50%] -bottom-[140px] opacity-0"
+              id="liveStatus"
+              className="inline-block font-medium opacity-50"
             >
-              <PiMouseSimple className="text-3xl text-white" />
-              <FaAnglesDown className="block arrow text-sm text-white" />
+              Coding
             </span>
-          </div>
+          </span>
+        </div>
+
+        <div
+          id="cta_container"
+          className="w-full flex flex-row items-center justify-center gap-5 portrait:mt-auto md:mt-7 md:relative opacity-0"
+        >
+          <CTALink id="cv_btn" href="#" className={`mr-2 md:mr-3`}>
+            <IoDocumentOutline />
+            Download CV
+          </CTALink>
+
+          <Link className="handle" href={`https://github.com/ShahSaminYasar`}>
+            <FiGithub className="text-xl text-white opacity-80" />
+          </Link>
+          <Link
+            className="handle"
+            href={`https://www.linkedin.com/in/shah-samin-yasar/`}
+          >
+            <FiLinkedin className="text-xl text-white opacity-80" />
+          </Link>
+          <Link
+            className="handle"
+            href={`https://instagram.com/shahsaminyasar`}
+          >
+            <FiInstagram className="text-xl text-white opacity-80" />
+          </Link>
+          <Link
+            className="handle"
+            href={`https://facebook.com/shah_samin_yasar`}
+          >
+            <FiFacebook className="text-xl text-white opacity-80" />
+          </Link>
+
+          <span
+            id="scroll_down_indicator"
+            className="flex flex-col items-center justify-center absolute left-[50%] -translate-x-[50%] -bottom-[140px] opacity-0"
+          >
+            <PiMouseSimple className="text-3xl text-white" />
+            <FaAnglesDown className="block arrow text-sm text-white" />
+          </span>
         </div>
       </Container>
-      <span
-        id="liveStatusContainer"
-        className="text-xs md:text-sm font-light text-white text-opacity-60 flex flex-row items-center gap-1 absolute bottom-4 left-4 opacity-0"
-      >
-        <div className="livenow">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>{" "}
-        LIVE status:{" "}
-        <span id="liveStatus" className="inline-block font-medium opacity-50">
-          Coding
-        </span>
-      </span>
+
       <Decor_BG_Circle
         className={`top-0 left-0 -translate-y-[10%] -translate-x-[40%]`}
       />
