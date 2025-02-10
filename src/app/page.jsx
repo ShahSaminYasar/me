@@ -7,6 +7,8 @@ import Skills from "./sections/Skills";
 import Portfolio from "./sections/Portfolio";
 import Cursor from "./components/Cursor";
 import Timeline from "./sections/Timeline";
+import Contact from "./sections/Contact";
+import Footer from "./components/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -26,6 +28,8 @@ export default function Home() {
       <Skills />
       <Portfolio />
       <Timeline />
+      <Contact />
+      <Footer />
     </main>
   );
 }

@@ -134,12 +134,12 @@ const Hero = () => {
             </h1>
           </div>
           <div className="overflow-hidden">
-            <span
+            <p
               id="title"
               className="block text-xl md:text-3xl font-thin opacity-0"
             >
-              a <p className="inline-block">MERN Stack Developer</p>
-            </span>
+              MERN Stack Developer
+            </p>
           </div>
 
           <span
