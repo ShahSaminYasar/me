@@ -86,3 +86,134 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Chronicle Button */
+.chronicle-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  line-height: 1;
+  border-radius: 0.4rem;
+  padding: 5px 10px 6px;
+  cursor: pointer;
+  border: none;
+  background: white;
+
+  transition: background 0.4s linear;
+  will-change: background;
+}
+
+.chronicle-button:hover {
+  background: #7770ff;
+}
+
+.chronicle-button:hover span:nth-of-type(1) em {
+  opacity: 0;
+  transform: rotateX(90deg) scaleX(0.9) translate3d(0, -10px, 0);
+}
+
+.chronicle-button:hover span:nth-of-type(2) em {
+  opacity: 1;
+  transform: rotateX(0deg) scaleX(1) translateZ(0);
+  transition: transform 0.75s cubic-bezier(0.645, 0.045, 0.355, 1),
+    opacity 0.35s linear 0.3s;
+}
+
+.chronicle-button span {
+  position: relative;
+  display: block;
+  perspective: 108px;
+}
+
+.chronicle-button span:nth-of-type(2) {
+  position: absolute;
+}
+
+.chronicle-button em {
+  font-style: normal;
+  display: inline-block;
+  font-size: 0.875rem;
+  color: black;
+  font-weight: 600;
+  will-change: transform, opacity, transition;
+  transition: transform 0.55s cubic-bezier(0.645, 0.045, 0.355, 1),
+    opacity 0.35s linear 0.2s;
+}
+
+.chronicle-button span:nth-of-type(1) em {
+  transform-origin: top;
+}
+
+.chronicle-button span:nth-of-type(2) em {
+  opacity: 0;
+  transform: rotateX(-90deg) scaleX(0.9) translate3d(0, 10px, 0);
+  transform-origin: bottom;
+}
+
+/* View All Button */
+
+.viewAllButton {
+  color: inherit;
+  padding: 0;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.viewAllButton {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+}
+
+.viewAllButton {
+  border: 2px solid #7770ff;
+  border-radius: 4px;
+  padding: 2px 12px;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  height: 33px;
+  cursor: pointer;
+}
+
+.viewAllButton::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -40%;
+  width: 300%;
+  height: 400%;
+  background-color: #7770ff;
+  transition: all 0.3s ease-in-out;
+  transform: rotate(-45deg);
+}
+
+.viewAllButton:hover::before {
+  top: 0;
+  left: -160%;
+  width: 380%;
+  height: 800%;
+}
+
+.viewAllButton span {
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  position: relative;
+  top: 0;
+}
+
+.viewAllButton:hover span {
+  top: -100% !important;
+}
+
+.viewAllButton span::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}

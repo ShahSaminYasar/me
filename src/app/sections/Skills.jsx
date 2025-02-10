@@ -4,7 +4,7 @@ import SkillCard from "../components/SkillCard";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -13,6 +13,11 @@ const Skills = () => {
   // States
   const [cardsContainerMoveX, setCardsContainerMoveX] = useState(0);
   const [textMoveX, setTextMoveX] = useState(0);
+
+  // Refs
+  const triggerRef = useRef(null);
+  const pinRef = useRef(null);
+  const scrollRef = useRef(null);
 
   //   Functions
   const calculateTextNCardsContainerMoveX = () => {
@@ -57,23 +62,29 @@ const Skills = () => {
         trigger: "#section_skills",
         start: "top 50%",
         end: "top top",
-        markers: true,
+        markers: false,
         scrub: 1,
       },
     });
   }, []);
 
   useGSAP(() => {
-    gsap.to("#skills_cards_container", {
-      x: -cardsContainerMoveX,
+    gsap.set(triggerRef?.current, {
+      height: window.innerHeight + cardsContainerMoveX,
+    });
+
+    gsap.to(scrollRef?.current, {
+      x: `${-cardsContainerMoveX}px`,
       ease: "none",
       scrollTrigger: {
-        trigger: "#section_skills",
+        trigger: triggerRef?.current,
         start: "top top",
-        end: `+=${cardsContainerMoveX}`,
+        end: `+=${cardsContainerMoveX}px`,
         markers: false,
-        scrub: true,
-        pin: true,
+        scrub: 1,
+        pin: pinRef?.current,
+        pinSpacing: true,
+        invalidateOnRefresh: true,
       },
     });
 
@@ -99,122 +110,129 @@ const Skills = () => {
       }
     );
 
-    // ScrollTrigger.refresh();
+    ScrollTrigger.refresh();
   }, [cardsContainerMoveX, textMoveX]);
 
   return (
-    <section id="section_skills" className="px-5 relative my-20">
-      <Container
-        id="skills_container"
-        className={`min-h-screen flex flex-col items-start justify-center`}
+    <div ref={triggerRef}>
+      <section
+        ref={pinRef}
+        id="section_skills"
+        className="px-5 sticky top-0 left-0 my-20"
       >
-        <div className="overflow-hidden min-h-[45px] md:min-h-[55px] w-full">
+        <Container
+          id="skills_container"
+          className={`min-h-screen flex flex-col items-start justify-center`}
+        >
+          <div className="overflow-hidden min-h-[45px] md:min-h-[55px] w-full">
+            <span
+              id="skills_heading"
+              className="block text-4xl md:text-5xl font-light text-white"
+            >
+              I{" "}
+              <span className="text-primary-shade inline-block font-semibold">
+                specialize
+              </span>{" "}
+              in...
+            </span>
+          </div>
+
+          {/* Skills Text */}
           <span
-            id="skills_heading"
-            className="block text-4xl md:text-5xl font-light text-white"
+            id="skills_text_one"
+            className="text-6xl font-semibold text-white text-opacity-10 whitespace-nowrap block mt-6"
           >
-            I{" "}
-            <span className="text-primary-shade inline-block font-semibold">
-              specialize
-            </span>{" "}
-            in...
+            React.js Next.js Node.js Express.js Javascript Typescript PhP Python
+            C MongoDB PostgreSQL Firebase TailwindCSS WordPress
           </span>
-        </div>
 
-        {/* Skills Text */}
-        <span
-          id="skills_text_one"
-          className="text-6xl font-semibold text-white text-opacity-10 whitespace-nowrap block mt-6"
-        >
-          React.js Next.js Node.js Express.js Javascript Typescript PhP Python C
-          MongoDB PostgreSQL Firebase TailwindCSS WordPress
-        </span>
+          {/* Skill Cards */}
+          <div
+            ref={scrollRef}
+            id="skills_cards_container"
+            className="flex flex-row gap-8 flex-nowrap my-3 relative left-[50%] -translate-x-[125px]"
+          >
+            <SkillCard
+              image={"/assets/logos/reactJS.png"}
+              heading={"React.js"}
+              text={"Javascript Library"}
+            />
+            <SkillCard
+              image={"/assets/logos/nextJS.png"}
+              heading={"Next.js"}
+              text={"React Frameword"}
+            />
+            <SkillCard
+              image={"/assets/logos/nodeJS.png"}
+              heading={"Node.js"}
+              text={"Runtime Environment"}
+            />
+            <SkillCard
+              image={"/assets/logos/expressJS.png"}
+              heading={"Express.js"}
+              text={"Node.js framework"}
+            />
+            <SkillCard
+              image={"/assets/logos/js.png"}
+              heading={"Javascript"}
+              text={"Programming Language"}
+            />
+            <SkillCard
+              image={"/assets/logos/php.png"}
+              heading={"PhP"}
+              text={"Programming Language"}
+            />
+            <SkillCard
+              image={"/assets/logos/python.png"}
+              heading={"Python"}
+              text={"Programming Language"}
+            />
+            <SkillCard
+              image={"/assets/logos/c.png"}
+              heading={"C"}
+              text={"Programming Language"}
+            />
+            <SkillCard
+              image={"/assets/logos/mongoDB.png"}
+              heading={"MongoDB"}
+              text={"NoSQL Database"}
+            />
+            <SkillCard
+              image={"/assets/logos/postgreSQl.png"}
+              heading={"PostgreSQL"}
+              text={"Relational Database Management System (RDBMS) "}
+            />
+            <SkillCard
+              image={"/assets/logos/firebase.png"}
+              heading={"Firebase"}
+              text={"Backend-as-a-Service (BaaS)"}
+            />
+            <SkillCard
+              image={"/assets/logos/tailwindcss.png"}
+              heading={"Tailwind CSS"}
+              text={"CSS Framework"}
+            />
+            <SkillCard
+              image={"/assets/logos/wordpress.png"}
+              heading={"WordPress"}
+              text={"Content Management System (CMS)"}
+            />
+          </div>
 
-        {/* Skill Cards */}
-        <div
-          id="skills_cards_container"
-          className="flex flex-row gap-8 flex-nowrap my-3 relative left-[50%] -translate-x-[125px]"
-        >
-          <SkillCard
-            image={"/assets/logos/reactJS.png"}
-            heading={"React.js"}
-            text={"Javascript Library"}
-          />
-          <SkillCard
-            image={"/assets/logos/nextJS.png"}
-            heading={"Next.js"}
-            text={"React Frameword"}
-          />
-          <SkillCard
-            image={"/assets/logos/nodeJS.png"}
-            heading={"Node.js"}
-            text={"Runtime Environment"}
-          />
-          <SkillCard
-            image={"/assets/logos/expressJS.png"}
-            heading={"Express.js"}
-            text={"Node.js framework"}
-          />
-          <SkillCard
-            image={"/assets/logos/js.png"}
-            heading={"Javascript"}
-            text={"Programming Language"}
-          />
-          <SkillCard
-            image={"/assets/logos/php.png"}
-            heading={"PhP"}
-            text={"Programming Language"}
-          />
-          <SkillCard
-            image={"/assets/logos/python.png"}
-            heading={"Python"}
-            text={"Programming Language"}
-          />
-          <SkillCard
-            image={"/assets/logos/c.png"}
-            heading={"C"}
-            text={"Programming Language"}
-          />
-          <SkillCard
-            image={"/assets/logos/mongoDB.png"}
-            heading={"MongoDB"}
-            text={"NoSQL Database"}
-          />
-          <SkillCard
-            image={"/assets/logos/postgreSQl.png"}
-            heading={"PostgreSQL"}
-            text={"Relational Database Management System (RDBMS) "}
-          />
-          <SkillCard
-            image={"/assets/logos/firebase.png"}
-            heading={"Firebase"}
-            text={"Backend-as-a-Service (BaaS)"}
-          />
-          <SkillCard
-            image={"/assets/logos/tailwindcss.png"}
-            heading={"Tailwind CSS"}
-            text={"CSS Framework"}
-          />
-          <SkillCard
-            image={"/assets/logos/wordpress.png"}
-            heading={"WordPress"}
-            text={"Content Management System (CMS)"}
-          />
-        </div>
-
-        {/* Skills Text */}
-        <span
-          id="skills_text_two"
-          className={`text-6xl font-semibold text-white text-opacity-10 whitespace-nowrap block mb-6`}
-        >
-          React.js Next.js Node.js Express.js Javascript Typescript PhP Python C
-          MongoDB PostgreSQL Firebase TailwindCSS WordPress
-        </span>
-      </Container>
-      <Decor_BG_Circle
-        className={`top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]`}
-      />
-    </section>
+          {/* Skills Text */}
+          <span
+            id="skills_text_two"
+            className={`text-6xl font-semibold text-white text-opacity-10 whitespace-nowrap block mb-6`}
+          >
+            React.js Next.js Node.js Express.js Javascript Typescript PhP Python
+            C MongoDB PostgreSQL Firebase TailwindCSS WordPress
+          </span>
+        </Container>
+        <Decor_BG_Circle
+          className={`top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]`}
+        />
+      </section>
+    </div>
   );
 };
 export default Skills;

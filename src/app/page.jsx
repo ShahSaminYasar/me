@@ -4,6 +4,8 @@ import About from "./sections/About";
 import Hero from "./sections/Hero";
 import Lenis from "lenis";
 import Skills from "./sections/Skills";
+import Portfolio from "./sections/Portfolio";
+import Cursor from "./components/Cursor";
 
 export default function Home() {
   useEffect(() => {
@@ -16,10 +18,12 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-[100vw] overflow-hidden">
+    <main className="w-[100vw] overflow-hidden relative">
+      <Cursor />
       <Hero />
       <About />
       <Skills />
+      <Portfolio />
     </main>
   );
 }

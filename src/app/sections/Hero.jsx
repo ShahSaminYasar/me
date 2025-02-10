@@ -39,8 +39,8 @@ const Hero = () => {
     heroTL
       .to("#hi", {
         opacity: 1,
-        duration: 0.7,
-        delay: 0.2,
+        duration: 0.4,
+        delay: 0.3,
       })
       .to("#name", {
         opacity: 1,
@@ -66,8 +66,8 @@ const Hero = () => {
       )
       .from("#title", {
         y: -50,
-        duration: 0.7,
-        delay: -0.2,
+        duration: 0.4,
+        delay: 0,
       })
       .to("#flag", {
         opacity: 1,
@@ -75,32 +75,28 @@ const Hero = () => {
       })
       .from("#flag", {
         scaleY: 0,
-        duration: 0.3,
+        duration: 0.2,
       })
       .to("#cta_container", {
         opacity: 1,
         duration: 0,
-        delay: 0.4,
+        delay: 0.1,
       })
       .from("#cv_btn", {
         y: 30,
         opacity: 0,
-        duration: 0.3,
+        duration: 0.2,
       })
       .from(".handle", {
         opacity: 0,
         x: -30,
-        duration: 0.3,
+        duration: 0.2,
         stagger: 0.1,
       })
       .to("#liveStatusContainer", {
         opacity: 1,
-        duration: 0,
-        delay: 0.4,
-      })
-      .from("#liveStatusContainer", {
-        y: 20,
-        duration: 0.5,
+        duration: 1,
+        delay: 0.05,
       })
       .to("#scroll_down_indicator", {
         opacity: "15%",
@@ -110,9 +106,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="bg-black relative p-5">
+    <section className="relative p-5">
       <Container
-        className={`min-h-[100vh] md:min-h-screen w-full flex flex-col gap-3 items-center landscape:justify-center relative py-20`}
+        className={`min-h-[100vh] portrait:min-h-[90vh] md:min-h-screen w-full flex flex-col gap-3 items-center landscape:justify-center relative py-20`}
       >
         <div className="portrait:mt-auto">
           <div className="flex flex-row justify-between items-center">
@@ -195,16 +191,16 @@ const Hero = () => {
           >
             <FiFacebook className="text-xl text-white opacity-80" />
           </Link>
-
-          <span
-            id="scroll_down_indicator"
-            className="flex flex-col items-center justify-center absolute left-[50%] -translate-x-[50%] -bottom-[140px] opacity-0"
-          >
-            <PiMouseSimple className="text-3xl text-white" />
-            <FaAnglesDown className="block arrow text-sm text-white" />
-          </span>
         </div>
       </Container>
+
+      <span
+        id="scroll_down_indicator"
+        className="flex flex-col items-center justify-center absolute left-[50%] -translate-x-[50%] -bottom-[20px] opacity-0"
+      >
+        <PiMouseSimple className="text-3xl text-white" />
+        <FaAnglesDown className="block arrow text-sm text-white" />
+      </span>
 
       <Decor_BG_Circle
         className={`top-0 left-0 -translate-y-[10%] -translate-x-[40%]`}
