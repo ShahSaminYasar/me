@@ -4,9 +4,10 @@ import gsap from "gsap";
 gsap.registerPlugin(useGSAP);
 const Cursor = () => {
   useGSAP(() => {
+    const cursor = document.getElementById("cursor");
+
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
-      const cursor = document.getElementById("cursor");
       gsap.to(cursor, {
         x: clientX - 5,
         y: clientY - 5,

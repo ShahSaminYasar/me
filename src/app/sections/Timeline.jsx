@@ -22,23 +22,23 @@ const Timeline = () => {
     });
 
     document.querySelectorAll(".timeline_card")?.forEach((card) => {
-      gsap.from(card.querySelector(".sbar"), {
+      gsap.from(card?.querySelector(".sbar"), {
         scaleY: 0,
         scrollTrigger: {
-          trigger: card.querySelector(".sbar"),
+          trigger: card?.querySelector(".sbar"),
           start: "top 90%",
-          end: "top 60%",
+          end: "top 70%",
           scrub: 0.5,
           markers: false,
         },
       });
 
-      gsap.from(card.querySelector(".ebar"), {
+      gsap.from(card?.querySelector(".ebar"), {
         scaleY: 0,
         scrollTrigger: {
-          trigger: card.querySelector(".ebar"),
+          trigger: card?.querySelector(".ebar"),
           start: "top 90%",
-          end: "top 60%",
+          end: "top 70%",
           scrub: 0.5,
           markers: false,
         },
@@ -96,7 +96,7 @@ const Timeline = () => {
               </div>
               <div className="self-end timeline_card origin-top">
                 <span className="sbar origin-top w-[2px] h-[43px] block bg-gradient-to-b from-[rgba(81,66,199,0.9)] to-[rgba(81,66,199,0.3)] rounded-[5px] ml-8 sm:ml-3"></span>
-                <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(81,66,199,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-secondary border-opacity-70">
+                <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(28,48,138,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-secondary border-opacity-70">
                   <span className="font-light text-[14px] md:text-sm block">
                     2019
                   </span>
@@ -125,7 +125,7 @@ const Timeline = () => {
               </div>
               <div className="self-end timeline_card origin-top">
                 <span className="sbar origin-top w-[2px] h-[43px] block bg-gradient-to-b from-[rgba(81,66,199,0.9)] to-[rgba(81,66,199,0.3)] rounded-[5px] ml-8 sm:ml-3"></span>
-                <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(81,66,199,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-secondary border-opacity-70">
+                <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(28,48,138,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-secondary border-opacity-70">
                   <span className="font-light text-[14px] md:text-sm block">
                     2020
                   </span>
@@ -155,7 +155,7 @@ const Timeline = () => {
               </div>
               <div className="self-end timeline_card origin-top">
                 <span className="sbar origin-top w-[2px] h-[43px] block bg-gradient-to-b from-[rgba(81,66,199,0.9)] to-[rgba(81,66,199,0.3)] rounded-[5px] ml-8 sm:ml-3"></span>
-                <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(81,66,199,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-secondary border-opacity-70">
+                <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(28,48,138,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-secondary border-opacity-70">
                   <span className="font-light text-[14px] md:text-sm block">
                     2021
                   </span>
@@ -184,7 +184,7 @@ const Timeline = () => {
               </div>
               <div className="self-end timeline_card origin-top">
                 <span className="sbar origin-top w-[2px] h-[43px] block bg-gradient-to-b from-[rgba(81,66,199,0.9)] to-[rgba(81,66,199,0.3)] rounded-[5px] ml-8 sm:ml-3"></span>
-                <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(81,66,199,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-secondary border-opacity-70">
+                <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(28,48,138,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-secondary border-opacity-70">
                   <span className="font-light text-[14px] md:text-sm block">
                     2023
                   </span>
@@ -193,7 +193,7 @@ const Timeline = () => {
                   </span>
                   <p className="text-xs font-thin">
                     Got into problem solving with C. Took part in physical
-                    contests and grabbed positions.
+                    contests and won positions.
                   </p>
                 </div>
                 <span className="ebar origin-top w-[2px] h-[43px] block bg-gradient-to-b to-[rgba(81,66,199,0.9)] from-[rgba(81,66,199,0.3)] rounded-[5px] ml-8 sm:ml-3"></span>
@@ -215,7 +215,7 @@ const Timeline = () => {
               </div>
               <div className="self-end timeline_card origin-top">
                 <span className="sbar origin-top w-[2px] h-[43px] block bg-gradient-to-b from-[rgba(81,66,199,0.9)] to-[rgba(81,66,199,0.3)] rounded-[5px] ml-8 sm:ml-3"></span>
-                <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(81,66,199,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-secondary border-opacity-70">
+                <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(28,48,138,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-secondary border-opacity-70">
                   <span className="font-light text-[14px] md:text-sm block">
                     2024
                   </span>
@@ -246,7 +246,7 @@ const Timeline = () => {
               </div>
               <div className="self-end timeline_card origin-top">
                 <span className="sbar origin-top w-[2px] h-[43px] block bg-gradient-to-b from-[rgba(81,66,199,0.9)] to-[rgba(81,66,199,0.3)] rounded-[5px] ml-8 sm:ml-3"></span>
-                <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(81,66,199,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-secondary border-opacity-70">
+                <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(28,48,138,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-secondary border-opacity-70">
                   <span className="font-light text-[14px] md:text-sm block">
                     2025
                   </span>
@@ -262,7 +262,7 @@ const Timeline = () => {
           </div>
         </Container>
         <Decor_BG_Circle
-          className={`-bottom-[10%] left-[50%] -translate-x-[50%]`}
+          className={`-bottom-[20vw] left-[50%] -translate-x-[50%]`}
         />
       </section>
     </div>
