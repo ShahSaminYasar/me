@@ -91,6 +91,23 @@ const Portfolio = () => {
         ease: "back.out",
       });
     });
+
+    return () => {
+      closeBtn?.removeEventListener("mouseenter", () => {
+        gsap.to(cursor, {
+          scale: 3.5,
+          duration: 0.3,
+          ease: "back.out",
+        });
+      });
+      closeBtn?.removeEventListener("mouseleave", () => {
+        gsap.to(cursor, {
+          scale: 1,
+          duration: 0.3,
+          ease: "back.out",
+        });
+      });
+    };
   }, []);
 
   return (

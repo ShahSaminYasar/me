@@ -6,6 +6,7 @@ import Lenis from "lenis";
 import Skills from "./sections/Skills";
 import Portfolio from "./sections/Portfolio";
 import Cursor from "./components/Cursor";
+import Timeline from "./sections/Timeline";
 
 export default function Home() {
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function Home() {
       <About />
       <Skills />
       <Portfolio />
+      <Timeline />
     </main>
   );
 }

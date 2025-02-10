@@ -102,7 +102,7 @@ const About = () => {
         </div>
 
         <div
-          className={`md:col-span-2 md:min-h-screen p-5 pr-10 flex flex-col justify-center gap-4`}
+          className={`md:col-span-2 md:min-h-screen p-5 sm:pr-10 flex flex-col justify-center gap-4`}
         >
           {/* Heading */}
           <div className="overflow-hidden">
