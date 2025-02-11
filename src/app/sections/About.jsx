@@ -11,6 +11,19 @@ gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   useGSAP(() => {
+    gsap.to(document.querySelector(".me_image_two"), {
+      opacity: 0,
+      duration: 0.4,
+      delay: 2,
+      scrollTrigger: {
+        trigger: "#section_about",
+        start: "top 10%",
+        end: "top top",
+        markers: false,
+        scrub: false,
+      },
+    });
+
     const aboutTL = gsap.timeline({
       scrollTrigger: {
         trigger: "#section_about",
@@ -101,6 +114,31 @@ const About = () => {
         duration: 0.2,
       });
     });
+
+    return () => {
+      imagesHolder.removeEventListener("mouseenter", () => {
+        gsap.to(imageTwo, {
+          opacity: 1,
+          duration: 0.2,
+        });
+        gsap.to(imageOne, {
+          opacity: 0,
+          duration: 0,
+          delay: 0.3,
+        });
+      });
+      imagesHolder.removeEventListener("mouseleave", () => {
+        gsap.to(imageOne, {
+          opacity: 1,
+          duration: 0,
+          delay: 0,
+        });
+        gsap.to(imageTwo, {
+          opacity: 0,
+          duration: 0.2,
+        });
+      });
+    };
   }, []);
 
   return (
@@ -134,7 +172,7 @@ const About = () => {
                 height={500}
                 priority={true}
                 alt="Shah Samin Yasar"
-                className="me_image_two opacity-0 absolute top-0 left-0 w-full h-full object-cover block rotate-[15deg] scale-110"
+                className="me_image_two absolute top-0 left-0 w-full h-full object-cover block rotate-[15deg] scale-110"
               />
             </div>
           </div>

@@ -5,6 +5,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useEffect, useRef, useState } from "react";
+import { FaReact } from "react-icons/fa6";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { DiNodejs } from "react-icons/di";
+import { SiExpress, SiMongodb, SiPhp } from "react-icons/si";
+import { IoLogoJavascript, IoLogoFirebase } from "react-icons/io5";
+import { FaPython, FaWordpress } from "react-icons/fa";
+import { PiFileCBold } from "react-icons/pi";
+import { BiLogoPostgresql } from "react-icons/bi";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -153,67 +161,67 @@ const Skills = () => {
             className="flex flex-row gap-8 flex-nowrap my-3 relative left-[50%] -translate-x-[125px]"
           >
             <SkillCard
-              image={"/assets/logos/reactJS.png"}
+              icon={FaReact}
               heading={"React.js"}
               text={"Javascript Library"}
             />
             <SkillCard
-              image={"/assets/logos/nextJS.png"}
+              icon={RiNextjsFill}
               heading={"Next.js"}
               text={"React Frameword"}
             />
             <SkillCard
-              image={"/assets/logos/nodeJS.png"}
+              icon={DiNodejs}
               heading={"Node.js"}
               text={"Runtime Environment"}
             />
             <SkillCard
-              image={"/assets/logos/expressJS.png"}
+              icon={SiExpress}
               heading={"Express.js"}
               text={"Node.js framework"}
             />
             <SkillCard
-              image={"/assets/logos/js.png"}
+              icon={IoLogoJavascript}
               heading={"Javascript"}
               text={"Programming Language"}
             />
             <SkillCard
-              image={"/assets/logos/php.png"}
-              heading={"PhP"}
-              text={"Programming Language"}
-            />
-            <SkillCard
-              image={"/assets/logos/python.png"}
-              heading={"Python"}
-              text={"Programming Language"}
-            />
-            <SkillCard
-              image={"/assets/logos/c.png"}
-              heading={"C"}
-              text={"Programming Language"}
-            />
-            <SkillCard
-              image={"/assets/logos/mongoDB.png"}
+              icon={SiMongodb}
               heading={"MongoDB"}
               text={"NoSQL Database"}
             />
             <SkillCard
-              image={"/assets/logos/postgreSQl.png"}
+              icon={BiLogoPostgresql}
               heading={"PostgreSQL"}
               text={"Relational Database Management System (RDBMS) "}
             />
             <SkillCard
-              image={"/assets/logos/firebase.png"}
+              icon={IoLogoFirebase}
               heading={"Firebase"}
               text={"Backend-as-a-Service (BaaS)"}
             />
             <SkillCard
-              image={"/assets/logos/tailwindcss.png"}
+              icon={RiTailwindCssFill}
               heading={"Tailwind CSS"}
               text={"CSS Framework"}
             />
             <SkillCard
-              image={"/assets/logos/wordpress.png"}
+              icon={SiPhp}
+              heading={"PhP"}
+              text={"Programming Language"}
+            />
+            <SkillCard
+              icon={FaPython}
+              heading={"Python"}
+              text={"Programming Language"}
+            />
+            <SkillCard
+              icon={PiFileCBold}
+              heading={"C"}
+              text={"Programming Language"}
+            />
+            <SkillCard
+              icon={FaWordpress}
               heading={"WordPress"}
               text={"Content Management System (CMS)"}
             />

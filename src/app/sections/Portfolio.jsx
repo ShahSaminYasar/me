@@ -154,7 +154,7 @@ const Portfolio = () => {
               image={"/assets/portfolio/skisc_hsc25_ss.gif"}
               title="SKISC HSC25"
               languages="reactjs,nodejs,expressjs,mongodb,tailwind css"
-              description="It is the official website of the HSC-25 batch of The Sylhet Khajanchibari International School and College. Homeworks, assignments, solutions, notes, QnA, blogs, polling, dashboards, user ranks, notifications, authentication, authorization and what not - I have given my all into this MERN stack project!"
+              description="It is the official website of the HSC-25 batch of The Sylhet Khajanchibari International School and College. Homeworks, assignments, solutions, notes, QnA, blogs, polling, dashboards, user ranks, notifications, authentication, authorization and what not - every feature is there!"
               liveLink="https://skisc-hsc25.web.app"
               openDrawer={() => openDrawerRef?.current()}
               className={"portfolio_card"}
@@ -241,7 +241,10 @@ const Portfolio = () => {
             alt="Website portfolio thumbnail"
             className="w-full rounded-lg aspect-video object-cover border-[1px] border-[#655473]"
           />
-          <h3 id="portfolio_details_title" className="font-medium text-3xl">
+          <h3
+            id="portfolio_details_title"
+            className="font-semibold text-3xl text-primary-shade"
+          >
             {portfolioDetails?.title}
           </h3>
           <div className="flex flex-row flex-wrap w-full gap-1 items-center">
@@ -257,7 +260,14 @@ const Portfolio = () => {
           <p id="portfolio_details_description" className="font-light">
             {portfolioDetails?.description}
           </p>
-          <div className="mt-4 flex justify-end">
+          <Link
+            href={portfolioDetails?.link}
+            target="_blank"
+            className="block text-xs font-medium text-left text-primary-shade"
+          >
+            {portfolioDetails?.link}
+          </Link>
+          <div className="mt-2 flex justify-end">
             <Link
               href={portfolioDetails?.link || "#section_portfolio"}
               target="_blank"
