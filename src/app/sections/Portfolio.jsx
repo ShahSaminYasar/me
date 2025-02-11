@@ -151,11 +151,21 @@ const Portfolio = () => {
             className="flex flex-row flex-wrap items-center justify-center gap-10 mt-10"
           >
             <PortfolioCard
-              image={"/assets/portfolio/skisc_hsc25_ss.gif"}
-              title="SKISC HSC25"
-              languages="reactjs,nodejs,expressjs,mongodb,tailwind css"
-              description="It is the official website of the HSC-25 batch of The Sylhet Khajanchibari International School and College. Homeworks, assignments, solutions, notes, QnA, blogs, polling, dashboards, user ranks, notifications, authentication, authorization and what not - every feature is there!"
-              liveLink="https://skisc-hsc25.web.app"
+              image={"/assets/portfolio/basha_lagbe_ss.gif"}
+              title="Basha Lagbe"
+              languages="NextJS,React Native,PostgreSQL,React,Prisma"
+              description="Basha Lagbe is an online platform for finding rental houses. Homeowners can post ads for their available rentals, while renters can search for their ideal home using filters like location, number of rooms, rent, and facilities. Users can also save ads to their favorites for later viewing. The platform is available on both web and mobile, though the mobile app is not yet published on the Play Store or App Store. However, the web version is live—feel free to check it out!"
+              liveLink="https://basha-lagbe.vercel.app"
+              openDrawer={() => openDrawerRef?.current()}
+              className={"portfolio_card"}
+              setPortfolioDetails={setPortfolioDetails}
+            />
+            <PortfolioCard
+              image={"/assets/portfolio/brave_education_ss.gif"}
+              title="Brave Education"
+              description="Brave Education is an educational consultancy firm located in Sylhet, Bangladesh. I built this website which serves as their online system for course enrollments. People are able to enroll in the courses/exams by going through a systematic process. At the end payments are being processed in the website to confirm enrollments. Later on, I implemented the feature of result publication of their exams."
+              liveLink="https://register.braveeducationbd.com"
+              languages="reactjs,nodejs,expressjs,mongodb"
               openDrawer={() => openDrawerRef?.current()}
               className={"portfolio_card"}
               setPortfolioDetails={setPortfolioDetails}
@@ -171,19 +181,11 @@ const Portfolio = () => {
               setPortfolioDetails={setPortfolioDetails}
             />
             <PortfolioCard
-              image={"/assets/portfolio/brave_education_ss.gif"}
-              title="Brave Education"
-              description="Brave Education is an educational consultancy firm located in Sylhet, Bangladesh. I built this website which serves as their online system for course enrollments. People are able to enroll in the courses/exams by going through a systematic process. At the end payments are being processed in the website to confirm enrollments. Later on, I implemented the feature of result publication of their exams."
-              languages="reactjs,nodejs,expressjs,mongodb"
-              openDrawer={() => openDrawerRef?.current()}
-              className={"portfolio_card"}
-              setPortfolioDetails={setPortfolioDetails}
-            />
-            <PortfolioCard
-              image={"/assets/portfolio/definify_ss.gif"}
-              title="Definify - Online dictionary"
-              description="Definify is an online dictionary app built on JavaScript which uses a dictionary API to serve users with any word's meanings, synonyms, antonyms, pronounciations, examples etc. in a very smooth and classy way with animations. I really want you to check it out once!"
-              languages="html,css,javascript"
+              image={"/assets/portfolio/tasks_align_ss.gif"}
+              title="Tasks Align"
+              languages="React Native, Javascript"
+              description="Tasks Align is a to-do app for Android and iOS, built with React Native. It allows users to add, edit, delete, and mark tasks as completed, with daily reminders to stay on track."
+              liveLink="https://drive.google.com/file/d/1qvp8ZyRad9yI_R2RNKv1CfXeZBqRKH2w/view?usp=drivesdk"
               openDrawer={() => openDrawerRef?.current()}
               className={"portfolio_card"}
               setPortfolioDetails={setPortfolioDetails}
@@ -214,10 +216,10 @@ const Portfolio = () => {
         {/* Drawer close button */}
         <button
           id="portfolio_details_close_btn"
-          className="absolute top-5 right-5 bg-blend-difference z-50"
+          className="absolute top-5 right-5 z-50"
           onClick={() => closeDrawerRef?.current()}
         >
-          <IoClose className="text-2xl text-white opacity-70" />
+          <IoClose className="text-3xl text-white opacity-90" />
         </button>
         {/* Drawer close layer */}
         <div
@@ -231,6 +233,7 @@ const Portfolio = () => {
         >
           <Image
             id="portfolio_details_image"
+            unoptimized={true}
             src={
               portfolioDetails?.thumbnail?.length > 3
                 ? portfolioDetails?.thumbnail

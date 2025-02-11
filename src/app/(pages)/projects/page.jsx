@@ -139,6 +139,34 @@ const page = () => {
   // Fetch data
   useEffect(() => {
     getSetProjects();
+
+    // Cursor animation on hover
+    const cursor = document.getElementById("cursor");
+    const closeBtn = document.getElementById("portfolio_details_close_btn");
+
+    let enlargeCursor = () => {
+      gsap.to(cursor, {
+        scale: 3.5,
+        duration: 0.3,
+        ease: "back.out",
+      });
+    };
+    let shrinkCursor = () => {
+      gsap.to(cursor, {
+        scale: 1,
+        duration: 0.3,
+        ease: "back.out",
+      });
+    };
+
+    closeBtn?.addEventListener("mouseenter", enlargeCursor);
+
+    closeBtn?.addEventListener("mouseleave", shrinkCursor);
+
+    return () => {
+      closeBtn?.removeEventListener("mouseenter", enlargeCursor);
+      closeBtn?.removeEventListener("mouseleave", shrinkCursor);
+    };
   }, []);
 
   return (
@@ -213,7 +241,7 @@ const page = () => {
             className="absolute top-5 right-5 bg-blend-difference z-50"
             onClick={() => closeDrawerRef?.current()}
           >
-            <IoClose className="text-2xl text-white opacity-70" />
+            <IoClose className="text-3xl text-white opacity-90" />
           </button>
           {/* Drawer close layer */}
           <div
@@ -227,6 +255,7 @@ const page = () => {
           >
             <Image
               id="portfolio_details_image"
+              unoptimized={true}
               src={
                 portfolioDetails?.thumbnail?.length > 3
                   ? portfolioDetails?.thumbnail
@@ -253,6 +282,13 @@ const page = () => {
             <p id="portfolio_details_description" className="font-light">
               {portfolioDetails?.description}
             </p>
+            <Link
+              href={portfolioDetails?.link}
+              target="_blank"
+              className="block text-xs font-medium text-left text-primary-shade"
+            >
+              {portfolioDetails?.link}
+            </Link>
             <div className="mt-4 flex justify-end">
               <Link
                 href={portfolioDetails?.link || "#section_portfolio"}

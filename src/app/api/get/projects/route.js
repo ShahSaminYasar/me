@@ -12,7 +12,7 @@ export async function GET(req) {
 
     let res;
     if (!id) {
-      res = await collection?.find()?.toArray();
+      res = await collection?.find()?.sort({ sl: 1 })?.toArray();
     } else {
       res = await collection?.findOne({ _id: new ObjectId(id) });
     }

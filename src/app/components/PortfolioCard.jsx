@@ -66,6 +66,7 @@ const PortfolioCard = ({
         width={500}
         height={500}
         alt={`Thumbnail of ${title}`}
+        unoptimized={true}
         onClick={handleOpenDrawer}
         className="portfolio-card_image w-full aspect-video object-cover rounded-lg mb-3"
       />

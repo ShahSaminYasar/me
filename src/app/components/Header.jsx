@@ -100,7 +100,7 @@ const Header = () => {
         stagger: 0.06,
       })
       .from(
-        "#portfolio_details_close_btn",
+        "#mobile_menu_close_btn",
         {
           opacity: 0,
           duration: 0.1,
@@ -157,7 +157,7 @@ const Header = () => {
       <header
         ref={headerRef}
         id="header"
-        className="w-full px-5 fixed top-0 left-0 z-20 opacity-0 bg-black bg-opacity-40 backdrop-blur-md"
+        className="w-full px-5 fixed top-0 left-0 z-20 opacity-0 bg-black bg-opacity-40 backdrop-blur-md shadow-md"
       >
         <Container
           className={`h-[70px] flex flex-row items-center justify-between pr-4`}
@@ -231,7 +231,7 @@ const Header = () => {
       <div className="-translate-x-[100%] md:hidden mobile_nav fixed top-0 left-0 z-20 w-full h-full bg-black px-5 py-10 overflow-y-auto text-white text-left flex flex-col items-start justify-center gap-2 text-3xl">
         <button
           onClick={() => closeMobileMenuRef?.current()}
-          id="portfolio_details_close_btn"
+          id="mobile_menu_close_btn"
           className="absolute top-5 right-5 z-40"
         >
           <IoClose className="text-4xl text-white opacity-70" />
