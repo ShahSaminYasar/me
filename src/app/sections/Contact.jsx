@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Container from "../components/Container";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTelegram,
+} from "react-icons/fa6";
 import Decor_BG_Circle from "../components/Decor_BG_Circle";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -218,7 +223,7 @@ const Contact = () => {
               href={"#"}
               className="contact_handle w-full flex flex-row items-center gap-3 rounded-badge p-3 text-sm text-white bg-gradient-to-br from-[rgba(0,153,255,0.2)] hover:to-[rgba(0,153,255,0.2)] duration-200 to-transparent border-[2px] border-[#0099ff]"
             >
-              <FaLinkedin className="text-3xl text-[#0099ff]" />
+              <FaTelegram className="text-3xl text-[#0099ff]" />
               <div className="flex flex-col items-start">
                 <span className="font-semibold text-sm text-[#0099ff]">
                   Telegram

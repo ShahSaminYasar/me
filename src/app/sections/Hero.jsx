@@ -170,24 +170,31 @@ const Hero = () => {
             Download CV
           </CTALink>
 
-          <Link className="handle" href={`https://github.com/ShahSaminYasar`}>
+          <Link
+            className="handle"
+            href={`https://github.com/ShahSaminYasar`}
+            target="_blank"
+          >
             <FiGithub className="text-xl text-white opacity-80" />
           </Link>
           <Link
             className="handle"
             href={`https://www.linkedin.com/in/shah-samin-yasar/`}
+            target="_blank"
           >
             <FiLinkedin className="text-xl text-white opacity-80" />
           </Link>
           <Link
             className="handle"
             href={`https://instagram.com/shahsaminyasar`}
+            target="_blank"
           >
             <FiInstagram className="text-xl text-white opacity-80" />
           </Link>
           <Link
             className="handle"
-            href={`https://facebook.com/shah_samin_yasar`}
+            href={`https://www.facebook.com/shahsaminyasar`}
+            target="_blank"
           >
             <FiFacebook className="text-xl text-white opacity-80" />
           </Link>
