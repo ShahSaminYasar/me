@@ -8,17 +8,28 @@ import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { LuExternalLink } from "react-icons/lu";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoClose } from "react-icons/io5";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const Portfolio = () => {
+  // States
+  const [portfolioDetails, setPortfolioDetails] = useState({
+    thumbnail: "/assets/portfolio/skisc_hsc25_ss.gif",
+    title: "",
+    description: "",
+    languages: "html,css,js",
+    link: "",
+  });
+
+  // Refs
   const openDrawerRef = useRef(() => {});
   const closeDrawerRef = useRef(() => {});
 
   // Effects
+  // GSAP
   useGSAP(() => {
     gsap.from("#portfolio_heading", {
       y: 100,
@@ -48,6 +59,11 @@ const Portfolio = () => {
 
     const drawerTL = gsap
       .timeline({ paused: true })
+      .to(document.body, {
+        height: "100vh",
+        overflow: "hidden",
+        duration: 0,
+      })
       .to("#portfolio_details", {
         display: "block",
         duration: 0,
@@ -72,6 +88,7 @@ const Portfolio = () => {
     };
   }, []);
 
+  // Cursor animation on hover
   useEffect(() => {
     const cursor = document.getElementById("cursor");
     const closeBtn = document.getElementById("portfolio_details_close_btn");
@@ -136,29 +153,46 @@ const Portfolio = () => {
             <PortfolioCard
               image={"/assets/portfolio/skisc_hsc25_ss.gif"}
               title="SKISC HSC25"
+              languages="reactjs,nodejs,expressjs,mongodb,tailwind css"
+              description="It is the official website of the HSC-25 batch of The Sylhet Khajanchibari International School and College. Homeworks, assignments, solutions, notes, QnA, blogs, polling, dashboards, user ranks, notifications, authentication, authorization and what not - I have given my all into this MERN stack project!"
+              liveLink="https://skisc-hsc25.web.app"
               openDrawer={() => openDrawerRef?.current()}
               className={"portfolio_card"}
+              setPortfolioDetails={setPortfolioDetails}
             />
             <PortfolioCard
               image={"/assets/portfolio/ravetagbd_ss.gif"}
               title="RaveTagBD"
+              description="MERN stack ecommerce website for a clothing store named 'RaveTag' - located in Beanibazar, Sylhet. All the functionalities that a standard ecommerce system requires are present including seperate admin and customer panels. The admin can manage products, orders, users, categories and more. The customer can view products, add to cart, place orders, track orders, etc."
+              languages="reactjs,nodejs,expressjs,mongodb, tailwind css"
+              liveLink="https://ravetagbd.web.app"
               openDrawer={() => openDrawerRef?.current()}
               className={"portfolio_card"}
+              setPortfolioDetails={setPortfolioDetails}
             />
             <PortfolioCard
               image={"/assets/portfolio/brave_education_ss.gif"}
               title="Brave Education"
+              description="Brave Education is an educational consultancy firm located in Sylhet, Bangladesh. I built this website which serves as their online system for course enrollments. People are able to enroll in the courses/exams by going through a systematic process. At the end payments are being processed in the website to confirm enrollments. Later on, I implemented the feature of result publication of their exams."
+              languages="reactjs,nodejs,expressjs,mongodb"
               openDrawer={() => openDrawerRef?.current()}
               className={"portfolio_card"}
+              setPortfolioDetails={setPortfolioDetails}
             />
             <PortfolioCard
               image={"/assets/portfolio/definify_ss.gif"}
               title="Definify - Online dictionary"
+              description="Definify is an online dictionary app built on JavaScript which uses a dictionary API to serve users with any word's meanings, synonyms, antonyms, pronounciations, examples etc. in a very smooth and classy way with animations. I really want you to check it out once!"
+              languages="html,css,javascript"
               openDrawer={() => openDrawerRef?.current()}
               className={"portfolio_card"}
+              setPortfolioDetails={setPortfolioDetails}
             />
           </div>
-          <Link href="#" className="viewAllButton mx-auto block w-fit mt-10">
+          <Link
+            href="/projects"
+            className="viewAllButton mx-auto block w-fit mt-10"
+          >
             <span
               data-text="See more"
               className="flex flex-row items-center gap-2 flex-nowrap"
@@ -175,44 +209,68 @@ const Portfolio = () => {
       {/* Portfolio Details Drawer */}
       <div
         id="portfolio_details"
-        className="hidden opacity-0 fixed left-0 top-0 bottom-0 right-0 w-full h-full bg-black bg-opacity-60 z-20 backdrop-blur-sm"
-        onClick={() => closeDrawerRef?.current()}
+        className="hidden opacity-0 fixed left-0 top-0 bottom-0 right-0 w-full h-full z-20"
       >
+        {/* Drawer close button */}
         <button
           id="portfolio_details_close_btn"
-          className="absolute top-5 right-5 bg-blend-difference z-30"
+          className="absolute top-5 right-5 bg-blend-difference z-40"
           onClick={() => closeDrawerRef?.current()}
         >
           <IoClose className="text-2xl text-white opacity-70" />
         </button>
+        {/* Drawer close layer */}
+        <div
+          className="fixed left-0 top-0 bottom-0 right-0 w-full h-full bg-black bg-opacity-60 z-30 backdrop-blur-sm"
+          onClick={() => closeDrawerRef?.current()}
+        ></div>
+        {/* Drawer */}
         <div
           id="portfolio_details_drawer"
-          className="w-full max-w-[400px] h-screen z-20 bg-slate-900 bg-opacity-60 py-10 pt-14 px-3 flex flex-col gap-4 text-white text-opacity-70 text-sm absolute left-0 top-0 translate-x-[-100%] bottom-0 after:content-[''] after:absolute after:top-0 after:right-0 after:w-[1px] after:h-full after:bg-gradient-to-b after:from-primary-shade after:to-transparent overflow-y-auto"
+          className="w-full max-w-[400px] h-screen z-40 bg-slate-900 bg-opacity-100 py-10 pt-14 px-3 flex flex-col gap-4 text-white text-opacity-70 text-xs fixed left-0 top-0 translate-x-[-100%] bottom-0 after:content-[''] after:absolute after:top-0 after:right-0 after:w-[1px] after:h-full after:bg-gradient-to-b after:from-primary-shade after:to-transparent overflow-y-auto"
         >
           <Image
             id="portfolio_details_image"
-            src={"/assets/portfolio/skisc_hsc25_ss.gif"}
+            src={
+              portfolioDetails?.thumbnail?.length > 3
+                ? portfolioDetails?.thumbnail
+                : null || null
+            }
             width={500}
             height={500}
             alt="Website portfolio thumbnail"
             className="w-full rounded-lg aspect-video object-cover border-[1px] border-[#655473]"
           />
           <h3 id="portfolio_details_title" className="font-medium text-3xl">
-            SKISC HSC25
+            {portfolioDetails?.title}
           </h3>
-          <p id="portfolio_details_description" className="font-thin">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
-            accusamus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur consequatur magni earum, recusandae maxime rem!
+          <div className="flex flex-row flex-wrap w-full gap-1 items-center">
+            {portfolioDetails?.languages?.split(",")?.map((language) => (
+              <span
+                key={language}
+                className="inline-block w-fit py-[2px] px-1 rounded-sm bg-white uppercase text-neutral-800 text-xs font-semibold"
+              >
+                {language}
+              </span>
+            ))}
+          </div>
+          <p id="portfolio_details_description" className="font-light">
+            {portfolioDetails?.description}
           </p>
-          <Link href="#" className="viewAllButton ml-auto block w-fit mt-10">
-            <span
-              data-text="Visit Link"
-              className="flex flex-row items-center gap-2 flex-nowrap"
+          <div className="mt-4 flex justify-end">
+            <Link
+              href={portfolioDetails?.link || "#section_portfolio"}
+              target="_blank"
+              className="viewAllButton w-fit"
             >
-              View Live <LuExternalLink />
-            </span>
-          </Link>
+              <span
+                data-text="Visit Link"
+                className="flex flex-row items-center gap-2 flex-nowrap"
+              >
+                View Live <LuExternalLink />
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     </>

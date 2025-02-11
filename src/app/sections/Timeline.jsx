@@ -141,7 +141,7 @@ const Timeline = () => {
             <div className="timeline_card">
               <div className="w-full max-w-[270px] md:max-w-[350px] p-5 rounded-lg bg-gradient-to-br from-[rgba(81,66,199,0.25)] to-transparent text-white text-opacity-80 font-normal flex flex-col gap-0 border-[2px] border-primary border-opacity-70">
                 <span className="font-light text-[14px] md:text-sm block">
-                  2020
+                  2021
                 </span>
                 <span className="font-medium text-lg md:text-xl block">
                   Entry into Web Development

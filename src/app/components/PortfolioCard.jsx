@@ -11,11 +11,14 @@ const PortfolioCard = ({
   image = "",
   title = "",
   description = "",
-  languages = [],
+  languages = "",
   liveLink = "",
+  setPortfolioDetails = () => {},
   openDrawer = () => {},
   className = "",
 }) => {
+  // Effects
+  // GSAP
   useGSAP(() => {
     const cursor = document.getElementById("cursor");
 
@@ -38,6 +41,18 @@ const PortfolioCard = ({
     });
   }, []);
 
+  // Functions
+  const handleOpenDrawer = () => {
+    setPortfolioDetails({
+      thumbnail: image,
+      title,
+      description,
+      languages,
+      link: liveLink,
+    });
+    return openDrawer();
+  };
+
   return (
     <div
       className={`portfolio-card ${
@@ -47,10 +62,11 @@ const PortfolioCard = ({
       }`}
     >
       <Image
-        src={image || null}
+        src={image?.length > 0 ? image : null}
         width={500}
         height={500}
         alt={`Thumbnail of ${title}`}
+        onClick={handleOpenDrawer}
         className="portfolio-card_image w-full aspect-video object-cover rounded-lg mb-3"
       />
       <div className="flex flex-row items-center justify-between gap-3 flex-wrap">
@@ -58,7 +74,7 @@ const PortfolioCard = ({
           {title}
         </h3>
         <div className="flex flex-row items-center flex-nowrap gap-2">
-          <button onClick={() => openDrawer()} className="chronicle-button">
+          <button onClick={handleOpenDrawer} className="chronicle-button">
             <span>
               <em>Details</em>
             </span>

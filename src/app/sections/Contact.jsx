@@ -5,11 +5,34 @@ import Decor_BG_Circle from "../components/Decor_BG_Circle";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+  useEffect(() => {
+    const cursor = document.getElementById("cursor");
+    const handles = document.querySelectorAll(".contact_handle");
+
+    handles?.forEach((handle) => {
+      handle?.addEventListener("mouseenter", () => {
+        cursor.innerHTML = "Click";
+        gsap.to(cursor, {
+          scale: 5.5,
+          duration: 0.3,
+        });
+      });
+      handle?.addEventListener("mouseleave", () => {
+        cursor.innerHTML = "";
+        gsap.to(cursor, {
+          scale: 1,
+          duration: 0.3,
+        });
+      });
+    });
+  }, []);
+
   useGSAP(() => {
     gsap.from("#contact_heading", {
       y: 100,
