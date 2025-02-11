@@ -5,12 +5,18 @@ import Decor_BG_Circle from "../components/Decor_BG_Circle";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+  // States
+  const [sendingMessage, setSendingMessage] = useState(false);
+
+  // Effects
   useEffect(() => {
     const cursor = document.getElementById("cursor");
     const handles = document.querySelectorAll(".contact_handle");
@@ -106,6 +112,44 @@ const Contact = () => {
       });
   }, []);
 
+  // Functions
+  const handleSendMessage = async (e) => {
+    e.preventDefault();
+    setSendingMessage(true);
+    let email = e.target.email.value;
+    let message = e.target.message.value;
+
+    const res = await axios.post("/api/post/messages", {
+      email,
+      message,
+      datetime: new Date().toString(),
+    });
+
+    setSendingMessage(false);
+
+    if (res?.data?.ok) {
+      Swal.fire({
+        title: "Thank You",
+        text: "Your message was sent. I will get back to you as soon as possible. Have a good day",
+        icon: "success",
+        background: "#1c308a",
+        color: "#fff",
+        showConfirmButton: false,
+        timer: 5000,
+        timerProgressBar: true,
+      });
+      return e.target.reset();
+    } else {
+      Swal.fire({
+        title: "Oops!",
+        text: "Sorry for the inconvenience, your message wasn't sent :( Please check the network connection and try again.",
+        icon: "warning",
+        background: "#1c308a",
+        color: "#fff",
+      });
+    }
+  };
+
   return (
     <section id="section_contact" className="relative px-5">
       <Container
@@ -192,13 +236,19 @@ const Contact = () => {
                 Leave a message...
               </span>
             </div>
-            <form className="contact_form flex flex-col gap-4 bg-primary bg-opacity-20 p-5 rounded-lg w-full">
+            <form
+              onSubmit={handleSendMessage}
+              className="contact_form flex flex-col gap-4 bg-primary bg-opacity-20 p-5 rounded-lg w-full"
+            >
               <input
                 placeholder="Your Email"
+                required
+                name="email"
                 type="email"
                 className="w-full py-2 px-3 rounded-xl bg-transparent text-sm text-white font-medium block border-[2px] border-primary-shade border-opacity-60 outline-none"
               />
               <textarea
+                name="message"
                 placeholder="Write message here"
                 rows={5}
                 className="resize-y w-full py-2 px-3 rounded-xl bg-transparent text-sm text-white font-medium block border-[2px] border-primary-shade border-opacity-60 outline-none"
@@ -206,9 +256,10 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="py-2 px-3 rounded-xl bg-gradient-to-br from-secondary to-primary text-white block text-sm font-normal w-full mr-auto bg-opacity-50 border-[2px] border-secondary mt-1"
+                disabled={sendingMessage}
+                className="py-2 px-3 rounded-xl bg-gradient-to-br from-secondary to-primary text-white block text-sm font-normal w-full mr-auto bg-opacity-50 border-[2px] border-secondary mt-1 disabled:opacity-60 disabled:grayscale-[70%]"
               >
-                Send Message
+                {sendingMessage ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
