@@ -4,6 +4,7 @@ import Decor_BG_Circle from "../components/Decor_BG_Circle";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -72,6 +73,36 @@ const About = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const imagesHolder = document.querySelector(".about_images");
+    const imageOne = document.querySelector(".me_image_one");
+    const imageTwo = document.querySelector(".me_image_two");
+
+    imagesHolder.addEventListener("mouseenter", () => {
+      gsap.to(imageTwo, {
+        opacity: 1,
+        duration: 0.2,
+      });
+      gsap.to(imageOne, {
+        opacity: 0,
+        duration: 0,
+        delay: 0.3,
+      });
+    });
+
+    imagesHolder.addEventListener("mouseleave", () => {
+      gsap.to(imageOne, {
+        opacity: 1,
+        duration: 0,
+        delay: 0,
+      });
+      gsap.to(imageTwo, {
+        opacity: 0,
+        duration: 0.2,
+      });
+    });
+  }, []);
+
   return (
     <section id="section_about" className="relative mt-5">
       <Container className={`grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-5`}>
@@ -87,7 +118,7 @@ const About = () => {
             }}
           >
             <div
-              className={`w-[100%] max-w-[250px] aspect-square rounded-[30%] rotate-[-15deg] overflow-hidden`}
+              className={`about_images w-[100%] max-w-[250px] aspect-square rounded-[30%] rotate-[-15deg] overflow-hidden relative`}
             >
               <Image
                 src={`/assets/shah_samin_yasar.jpg`}
@@ -95,7 +126,15 @@ const About = () => {
                 height={500}
                 priority={true}
                 alt="Shah Samin Yasar"
-                className="w-full h-full object-cover block rotate-[15deg] scale-125"
+                className="me_image_one absolute top-0 left-0 w-full h-full object-cover block rotate-[15deg] scale-125"
+              />
+              <Image
+                src={`/assets/shah_samin_yasar_2.jpg`}
+                width={500}
+                height={500}
+                priority={true}
+                alt="Shah Samin Yasar"
+                className="me_image_two opacity-0 absolute top-0 left-0 w-full h-full object-cover block rotate-[15deg] scale-110"
               />
             </div>
           </div>
