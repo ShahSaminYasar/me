@@ -106,7 +106,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative p-5">
+    <section id="section_hero" className="relative p-5">
       <Container
         className={`min-h-[100vh] portrait:min-h-[90vh] md:min-h-screen w-full flex flex-col gap-3 items-center landscape:justify-center relative py-20`}
       >

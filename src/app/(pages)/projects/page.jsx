@@ -14,6 +14,7 @@ import Link from "next/link";
 import { LuExternalLink } from "react-icons/lu";
 import Footer from "@/app/components/Footer";
 import Decor_BG_Circle from "@/app/components/Decor_BG_Circle";
+import Header from "@/app/components/Header";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -142,6 +143,7 @@ const page = () => {
 
   return (
     <>
+      <Header />
       <main className="py-10 pt-0 px-5">
         <Container
           className={`flex flex-col gap-5 items-center justify-center`}
@@ -149,11 +151,11 @@ const page = () => {
           {/* Header */}
           <div className="w-full m-5 rounded-badge md:rounded-xl bg-gradient-to-tl from-[rgba(255,255,255,0.5)] to-black p-[1px] relative">
             <div className="w-full rounded-badge md:rounded-xl bg-gradient-to-br from-[#313131] to-black p-5 flex flex-col md:flex-row gap-7 justify-between items-center relative overflow-hidden">
-              <h2 className="opacity-0 block text-[55px] sm:text-[70px] md:text-[85px] lg:text-[120px] font-bold text-white relative z-30">
-                <div className="overflow-hidden">
+              <h2 className="opacity-0 text-[55px] sm:text-[70px] md:text-[85px] lg:text-[120px] font-bold text-white relative z-30 flex flex-row md:flex-col gap-2 flex-wrap">
+                <div className="overflow-hidden inline-block">
                   <span className="block title_span">My</span>
-                </div>
-                <div className="overflow-hidden">
+                </div>{" "}
+                <div className="overflow-hidden inline-block">
                   <span className="block title_span">Works</span>
                 </div>
               </h2>
@@ -208,7 +210,7 @@ const page = () => {
           {/* Drawer close button */}
           <button
             id="portfolio_details_close_btn"
-            className="absolute top-5 right-5 bg-blend-difference z-40"
+            className="absolute top-5 right-5 bg-blend-difference z-50"
             onClick={() => closeDrawerRef?.current()}
           >
             <IoClose className="text-2xl text-white opacity-70" />
@@ -269,7 +271,8 @@ const page = () => {
         </div>
       </main>
       <Cursor />
-      <Footer />
+      <Footer className={`mb-5`} />
+      <div className="w-full h-[10px]"></div>
     </>
   );
 };

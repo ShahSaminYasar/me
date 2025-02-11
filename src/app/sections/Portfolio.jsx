@@ -214,7 +214,7 @@ const Portfolio = () => {
         {/* Drawer close button */}
         <button
           id="portfolio_details_close_btn"
-          className="absolute top-5 right-5 bg-blend-difference z-40"
+          className="absolute top-5 right-5 bg-blend-difference z-50"
           onClick={() => closeDrawerRef?.current()}
         >
           <IoClose className="text-2xl text-white opacity-70" />

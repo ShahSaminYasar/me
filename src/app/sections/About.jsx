@@ -91,53 +91,24 @@ const About = () => {
     const imageOne = document.querySelector(".me_image_one");
     const imageTwo = document.querySelector(".me_image_two");
 
-    imagesHolder.addEventListener("mouseenter", () => {
-      gsap.to(imageTwo, {
-        opacity: 1,
-        duration: 0.2,
-      });
-      gsap.to(imageOne, {
-        opacity: 0,
-        duration: 0,
-        delay: 0.3,
-      });
-    });
+    const handleMouseEnter = () => {
+      gsap.killTweensOf([imageOne, imageTwo]); // Stop any ongoing animations
+      gsap.to(imageTwo, { opacity: 1, duration: 0.2 });
+      gsap.to(imageOne, { opacity: 0, duration: 0, delay: 0.3 });
+    };
 
-    imagesHolder.addEventListener("mouseleave", () => {
-      gsap.to(imageOne, {
-        opacity: 1,
-        duration: 0,
-        delay: 0,
-      });
-      gsap.to(imageTwo, {
-        opacity: 0,
-        duration: 0.2,
-      });
-    });
+    const handleMouseLeave = () => {
+      gsap.killTweensOf([imageOne, imageTwo]); // Stop any ongoing animations
+      gsap.to(imageOne, { opacity: 1, duration: 0 });
+      gsap.to(imageTwo, { opacity: 0, duration: 0.2 });
+    };
+
+    imagesHolder.addEventListener("mouseenter", handleMouseEnter);
+    imagesHolder.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      imagesHolder.removeEventListener("mouseenter", () => {
-        gsap.to(imageTwo, {
-          opacity: 1,
-          duration: 0.2,
-        });
-        gsap.to(imageOne, {
-          opacity: 0,
-          duration: 0,
-          delay: 0.3,
-        });
-      });
-      imagesHolder.removeEventListener("mouseleave", () => {
-        gsap.to(imageOne, {
-          opacity: 1,
-          duration: 0,
-          delay: 0,
-        });
-        gsap.to(imageTwo, {
-          opacity: 0,
-          duration: 0.2,
-        });
-      });
+      imagesHolder.removeEventListener("mouseenter", handleMouseEnter);
+      imagesHolder.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 

@@ -122,12 +122,8 @@ const Skills = () => {
   }, [cardsContainerMoveX, textMoveX]);
 
   return (
-    <div ref={triggerRef}>
-      <section
-        ref={pinRef}
-        id="section_skills"
-        className="px-5 sticky top-0 left-0 my-20"
-      >
+    <div ref={triggerRef} id="section_skills">
+      <section ref={pinRef} className="px-5 sticky top-0 left-0 my-20">
         <Container
           id="skills_container"
           className={`min-h-screen flex flex-col items-start justify-center`}

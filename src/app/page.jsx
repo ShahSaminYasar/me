@@ -9,6 +9,7 @@ import Cursor from "./components/Cursor";
 import Timeline from "./sections/Timeline";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 export default function Home() {
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function Home() {
   return (
     <main className="w-[100vw] overflow-hidden relative">
       <Cursor />
+      <Header />
       <Hero />
       <About />
       <Skills />
