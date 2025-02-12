@@ -12,7 +12,7 @@ const SkillCard = ({ icon: Icon, heading, text }) => {
       <span className="block mt-8 font-semibold text-4xl text-center opacity-100">
         {heading}
       </span>
-      <span className="text-sm font-thin block text-center opacity-90">
+      <span className="text-sm font-light block text-center opacity-90">
         {text}
       </span>
     </div>

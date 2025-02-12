@@ -184,7 +184,8 @@ const Contact = () => {
             </div>
 
             <Link
-              href={"#"}
+              href={"https://www.linkedin.com/in/shah-samin-yasar/"}
+              target="_blank"
               className="contact_handle w-full flex flex-row items-center gap-3 rounded-badge p-3 text-sm text-white bg-gradient-to-br from-[rgba(0,102,255,0.2)] hover:to-[rgba(0,102,255,0.2)] duration-200 to-transparent border-[2px] border-[#0066ff]"
             >
               <FaLinkedin className="text-3xl text-[#0066ff]" />
@@ -196,7 +197,8 @@ const Contact = () => {
               </div>
             </Link>
             <Link
-              href={"#"}
+              href={"https://www.facebook.com/shahsaminyasar"}
+              target="_blank"
               className="contact_handle w-full flex flex-row items-center gap-3 rounded-badge p-3 text-sm text-white bg-gradient-to-br from-[rgba(2,15,255,0.2)] hover:to-[rgba(2,15,255,0.2)] duration-200 to-transparent border-[2px] border-[#020fff]"
             >
               <FaFacebook className="text-3xl text-[#020fff]" />
@@ -208,7 +210,8 @@ const Contact = () => {
               </div>
             </Link>
             <Link
-              href={"#"}
+              href={"https://instagram.com/shah_samin_yasar"}
+              target="_blank"
               className="contact_handle w-full flex flex-row items-center gap-3 rounded-badge p-3 text-sm text-white bg-gradient-to-br from-[rgba(255,0,153,0.2)] hover:to-[rgba(255,0,153,0.2)] duration-200 to-transparent border-[2px] border-[#ff0099]"
             >
               <FaInstagram className="text-3xl text-[#ff0099]" />
@@ -220,7 +223,8 @@ const Contact = () => {
               </div>
             </Link>
             <Link
-              href={"#"}
+              href={"https://t.me/shahsaminyasar"}
+              target="_blank"
               className="contact_handle w-full flex flex-row items-center gap-3 rounded-badge p-3 text-sm text-white bg-gradient-to-br from-[rgba(0,153,255,0.2)] hover:to-[rgba(0,153,255,0.2)] duration-200 to-transparent border-[2px] border-[#0099ff]"
             >
               <FaTelegram className="text-3xl text-[#0099ff]" />

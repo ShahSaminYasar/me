@@ -39,12 +39,12 @@ const Hero = () => {
     heroTL
       .to("#hi", {
         opacity: 1,
-        duration: 0.4,
+        duration: 0.5,
         delay: 0.3,
       })
       .to("#name", {
         opacity: 1,
-        duration: 0.01,
+        duration: 0,
       })
       .from(
         "#name span",
@@ -54,50 +54,78 @@ const Hero = () => {
           duration: 0.4,
           stagger: 0.03,
         },
-        "withTitle"
+        "a"
       )
       .to(
         "#title",
         {
           opacity: 1,
-          duration: 0.02,
+          duration: 0,
         },
-        "withTitle"
+        "a"
       )
-      .from("#title", {
-        y: -50,
-        duration: 0.4,
-        delay: 0,
-      })
-      .to("#flag", {
-        opacity: 1,
-        duration: 0,
-      })
-      .from("#flag", {
-        scaleY: 0,
-        duration: 0.2,
-      })
-      .to("#cta_container", {
-        opacity: 1,
-        duration: 0,
-        delay: 0.1,
-      })
-      .from("#cv_btn", {
-        y: 30,
-        opacity: 0,
-        duration: 0.2,
-      })
-      .from(".handle", {
-        opacity: 0,
-        x: -30,
-        duration: 0.2,
-        stagger: 0.1,
-      })
-      .to("#liveStatusContainer", {
-        opacity: 1,
-        duration: 1,
-        delay: 0.05,
-      })
+      .from(
+        "#title",
+        {
+          y: -50,
+          duration: 0.4,
+          delay: 0,
+        },
+        "a"
+      )
+      .to(
+        "#flag",
+        {
+          opacity: 1,
+          duration: 0,
+        },
+        "a"
+      )
+      .from(
+        "#flag",
+        {
+          scaleY: 0,
+          duration: 0.2,
+        },
+        "a"
+      )
+      .to(
+        "#cta_container",
+        {
+          opacity: 1,
+          duration: 0,
+          delay: 0.1,
+        },
+        "a"
+      )
+      .from(
+        "#cv_btn",
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.4,
+        },
+        "a"
+      )
+      .from(
+        ".handle",
+        {
+          opacity: 0,
+          x: -30,
+          duration: 0.2,
+          stagger: 0.1,
+        },
+        "a"
+      )
+      .to(
+        "#liveStatusContainer",
+        {
+          opacity: 1,
+          duration: 1,
+          delay: 0.05,
+        },
+        "a"
+      )
       .to("#scroll_down_indicator", {
         opacity: "15%",
         duration: 0.3,
@@ -186,7 +214,7 @@ const Hero = () => {
           </Link>
           <Link
             className="handle"
-            href={`https://instagram.com/shahsaminyasar`}
+            href={`https://instagram.com/shah_samin_yasar`}
             target="_blank"
           >
             <FiInstagram className="text-xl text-white opacity-80" />

@@ -168,7 +168,7 @@ const About = () => {
           <div className="overflow-hidden">
             <p
               id="about_description"
-              className="text-justify text-sm text-white text-opacity-80 font-thin"
+              className="block text-justify text-sm text-white text-opacity-70 font-light"
             >
               I'm Shah Samin Yasar, a MERN stack developer from Sylhet,
               Bangladesh, with 5+ years of experience. I specialize in building

@@ -164,7 +164,7 @@ const Header = () => {
         >
           <Link
             href={"/"}
-            className="logo block w-fit px-2 py-1 bg-white text-black rounded-sm text-sm"
+            className="logo block w-fit px-2 py-1 bg-[#f9faff] text-black rounded-sm text-sm font-normal"
           >
             Shah Samin Yasar
           </Link>
