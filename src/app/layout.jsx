@@ -4,7 +4,7 @@ import { montserrat } from "./lib/fonts";
 export const metadata = {
   title: "SHAH SAMIN YASAR - MERN Stack Developer",
   description:
-    "Portfolio of Shah Samin Yasar - a 19-year-old full stack developer based in Sylhet, Bangladesh",
+    "Portfolio of Shah Samin Yasar - a full stack developer based in Sylhet, Bangladesh",
   keywords: [
     "shah samin yasar",
     "mern stack developer",
@@ -26,7 +26,7 @@ export const metadata = {
   openGraph: {
     title: "SHAH SAMIN YASAR - MERN Stack Developer",
     description:
-      "Portfolio of Shah Samin Yasar - a 19-year-old full stack developer based in Sylhet, Bangladesh",
+      "Portfolio of Shah Samin Yasar - a full stack developer based in Sylhet, Bangladesh",
     url: "https://shahsaminyasar.vercel.app",
     siteName: "Shah Samin Yasar's Portfolio",
     type: "website",

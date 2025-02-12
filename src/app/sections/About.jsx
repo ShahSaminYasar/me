@@ -189,10 +189,6 @@ const About = () => {
             ></div>
             <span className="relative">
               <span className="w-4 h-1 bg-primary-shade rounded-sm absolute top-[50%] -left-5 -translate-y-[50%]"></span>
-              📅 Age: <span className="font-semibold">19 years</span>
-            </span>
-            <span className="relative">
-              <span className="w-4 h-1 bg-primary-shade rounded-sm absolute top-[50%] -left-5 -translate-y-[50%]"></span>
               📍 Based:{" "}
               <span className="font-semibold">Sylhet, Bangladesh</span>
             </span>
