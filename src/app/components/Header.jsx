@@ -49,8 +49,8 @@ const Header = () => {
       gsap.to(header, {
         opacity: inHero ? 0 : 1,
         pointerEvents: inHero ? "none" : "all",
-        translateY:
-          scrollTop <= 12 ? "-100%" : direction === "down" ? "-100%" : "0%",
+        translateY: scrollTop <= 12 ? "-100%" : "0%",
+        // scrollTop <= 12 ? "-100%" : direction === "down" ? "-100%" : "0%",
         duration: 0.4,
         delay: 0.3,
       });
