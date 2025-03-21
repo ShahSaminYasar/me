@@ -1,10 +1,12 @@
 import "./globals.css";
 import { montserrat } from "./lib/fonts";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "SHAH SAMIN YASAR - MERN Stack Developer",
   description:
     "Portfolio of Shah Samin Yasar - a full stack developer based in Sylhet, Bangladesh",
+  icons: "/favicon.png",
   keywords: [
     "shah samin yasar",
     "mern stack developer",
@@ -46,6 +48,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${montserrat.className} antialiased relative`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
