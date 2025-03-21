@@ -27,7 +27,7 @@ const About = () => {
     const aboutTL = gsap.timeline({
       scrollTrigger: {
         trigger: "#section_about",
-        start: "-top 40%",
+        start: "top 80%",
         end: "top top",
         markers: false,
         scrub: true,
