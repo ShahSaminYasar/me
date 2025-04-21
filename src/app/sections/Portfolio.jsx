@@ -151,6 +151,18 @@ const Portfolio = () => {
             className="flex flex-row flex-wrap items-center justify-center gap-10 mt-10"
           >
             <PortfolioCard
+              image={
+                "https://ph-files.imgix.net/2f2f1b9b-b596-48b8-a228-7e1b3cfcb660.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=535&h=320&fit=max&frame=1&dpr=2"
+              }
+              title="Yawmly"
+              languages="NextJS,MongoDB,Next PWA"
+              description="Yawmly started as a personal tool to plan study sessions in a clean, distraction-free way. What began as a simple table turned into a lightweight, offline-first PWA for daily planning. It breaks your day into focused session blocks with color tags, time tracking, and remarks — making it easier to stay on track. You can start using it anonymously and sync later with email or Google. A built-in D-Day tracker keeps big goals in sight. The UI is minimal and fast, built to help—not overwhelm. The biggest challenge was syncing local and online data smoothly, especially with Google login. But every issue solved made it stronger. Yawmly began for me, now it’s here for you."
+              liveLink="https://www.producthunt.com/posts/yawmly"
+              openDrawer={() => openDrawerRef?.current()}
+              className={"portfolio_card"}
+              setPortfolioDetails={setPortfolioDetails}
+            />
+            <PortfolioCard
               image={"/assets/portfolio/basha_lagbe_ss.gif"}
               title="Basha Lagbe"
               languages="NextJS,React Native,PostgreSQL,React,Prisma"
@@ -161,6 +173,16 @@ const Portfolio = () => {
               setPortfolioDetails={setPortfolioDetails}
             />
             <PortfolioCard
+              image={"/assets/portfolio/tasks_align_ss.gif"}
+              title="Tasks Align"
+              languages="React Native, Javascript"
+              description="Tasks Align is a to-do app for Android and iOS, built with React Native. It allows users to add, edit, delete, and mark tasks as completed, with daily reminders to stay on track."
+              liveLink="https://drive.google.com/file/d/1qvp8ZyRad9yI_R2RNKv1CfXeZBqRKH2w/view?usp=drivesdk"
+              openDrawer={() => openDrawerRef?.current()}
+              className={"portfolio_card"}
+              setPortfolioDetails={setPortfolioDetails}
+            />
+            {/* <PortfolioCard
               image={"/assets/portfolio/brave_education_ss.gif"}
               title="Brave Education"
               description="Brave Education is an educational consultancy firm located in Sylhet, Bangladesh. I built this website which serves as their online system for course enrollments. People are able to enroll in the courses/exams by going through a systematic process. At the end payments are being processed in the website to confirm enrollments. Later on, I implemented the feature of result publication of their exams."
@@ -169,23 +191,13 @@ const Portfolio = () => {
               openDrawer={() => openDrawerRef?.current()}
               className={"portfolio_card"}
               setPortfolioDetails={setPortfolioDetails}
-            />
+            /> */}
             <PortfolioCard
               image={"/assets/portfolio/ravetagbd_ss.gif"}
               title="RaveTagBD"
               description="MERN stack ecommerce website for a clothing store named 'RaveTag' - located in Beanibazar, Sylhet. All the functionalities that a standard ecommerce system requires are present including seperate admin and customer panels. The admin can manage products, orders, users, categories and more. The customer can view products, add to cart, place orders, track orders, etc."
               languages="reactjs,nodejs,expressjs,mongodb, tailwind css"
               liveLink="https://ravetagbd.web.app"
-              openDrawer={() => openDrawerRef?.current()}
-              className={"portfolio_card"}
-              setPortfolioDetails={setPortfolioDetails}
-            />
-            <PortfolioCard
-              image={"/assets/portfolio/tasks_align_ss.gif"}
-              title="Tasks Align"
-              languages="React Native, Javascript"
-              description="Tasks Align is a to-do app for Android and iOS, built with React Native. It allows users to add, edit, delete, and mark tasks as completed, with daily reminders to stay on track."
-              liveLink="https://drive.google.com/file/d/1qvp8ZyRad9yI_R2RNKv1CfXeZBqRKH2w/view?usp=drivesdk"
               openDrawer={() => openDrawerRef?.current()}
               className={"portfolio_card"}
               setPortfolioDetails={setPortfolioDetails}
