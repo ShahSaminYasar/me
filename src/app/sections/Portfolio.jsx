@@ -173,11 +173,12 @@ const Portfolio = () => {
               setPortfolioDetails={setPortfolioDetails}
             />
             <PortfolioCard
-              image={"/assets/portfolio/tasks_align_ss.gif"}
-              title="Tasks Align"
-              languages="React Native, Javascript"
-              description="Tasks Align is a to-do app for Android and iOS, built with React Native. It allows users to add, edit, delete, and mark tasks as completed, with daily reminders to stay on track."
-              liveLink="https://drive.google.com/file/d/1qvp8ZyRad9yI_R2RNKv1CfXeZBqRKH2w/view?usp=drivesdk"
+              image={"/assets/portfolio/nha_ss.png"}
+              title="NHA - Landing Page
+"
+              languages="Figma, Next.js, MERN Stack, GSAP"
+              description="Designed this landing page for a car servicing business of UAE named Nurul Hossain Auto Accessories (NHA). I made the design in Figma and development (in Next.js) is ongoing."
+              liveLink="#"
               openDrawer={() => openDrawerRef?.current()}
               className={"portfolio_card"}
               setPortfolioDetails={setPortfolioDetails}

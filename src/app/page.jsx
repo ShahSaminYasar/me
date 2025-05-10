@@ -10,6 +10,8 @@ import Timeline from "./sections/Timeline";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Skills2 from "./sections/Skills2";
+import Promo from "./sections/Promo";
 
 export default function Home() {
   useEffect(() => {
@@ -27,10 +29,12 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
-      <Skills />
+      {/* <Skills /> */}
+      <Skills2 />
       <Portfolio />
       <Timeline />
       <Contact />
+      <Promo />
       <Footer />
     </main>
   );

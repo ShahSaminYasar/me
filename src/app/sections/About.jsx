@@ -113,7 +113,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="section_about" className="relative mt-5">
+    <section id="section_about" className="relative mt-5 mb-20">
       <Container className={`grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-5`}>
         <div className="p-5 overflow-hidden">
           <div

@@ -158,7 +158,7 @@ const Contact = () => {
   return (
     <section id="section_contact" className="relative px-5">
       <Container
-        className={`min-h-screen flex flex-col items-center justify-center py-10`}
+        className={`flex flex-col items-center justify-center pt-20 pb-1`}
       >
         {/* Section Title */}
         <div className="overflow-hidden min-h-[45px] md:min-h-[55px] w-full">
