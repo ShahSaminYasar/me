@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
 }
 
 html.lenis,
@@ -31,6 +32,8 @@ body {
   overflow-x: hidden !important;
   background: #000;
   color: #fff;
+  overflow-y: auto;
+  height: fit-content;
 }
 
 /* Live Indicator Animation */
@@ -241,4 +244,19 @@ body {
   width: 100%;
   height: 100%;
   color: #fff;
+}
+
+#portfolio_details_drawer {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
+#portfolio_details_drawer:focus {
+  outline: none;
+}
+
+/* Ensure wheel events work */
+#portfolio_details_drawer:hover,
+#portfolio_details_drawer:focus {
+  overflow-y: auto !important;
 }

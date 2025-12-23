@@ -107,23 +107,28 @@ const page = () => {
 
     const drawerTL = gsap
       .timeline({ paused: true })
-      .to(document.body, {
+      .set(document.body, {
         height: "100vh",
-        overflow: "hidden",
-        duration: 0,
+        overflowY: "hidden",
       })
-      .to("#portfolio_details", {
-        display: "block",
-        duration: 0,
-      })
-      .to("#portfolio_details", {
-        opacity: "100%",
-        duration: 0.1,
-      })
+      .set("#portfolio_details", { display: "block" })
+      .to("#portfolio_details", { opacity: 1, duration: 0.1 })
       .to("#portfolio_details_drawer", {
-        translateX: 0,
+        x: 0,
         duration: 0.5,
         ease: "power3.inOut",
+        onStart: () => {
+          const drawer = document.getElementById("portfolio_details_drawer");
+          drawer.focus();
+
+          drawer.addEventListener(
+            "wheel",
+            function (e) {
+              e.stopPropagation();
+            },
+            { passive: true }
+          );
+        },
       });
 
     // Functions
@@ -206,7 +211,7 @@ const page = () => {
 
           {/* Content */}
           {loading ? (
-            <div className="min-h-[40vh] grid place-items-center text-white">
+            <div className="min-h-[90vh] grid place-items-center text-white">
               <span className="loading loading-sm loading-spinner text-white"></span>
             </div>
           ) : (
@@ -251,7 +256,8 @@ const page = () => {
           {/* Drawer */}
           <div
             id="portfolio_details_drawer"
-            className="w-full max-w-[400px] h-screen z-40 bg-slate-900 bg-opacity-100 py-10 pt-14 px-3 flex flex-col gap-4 text-white text-opacity-70 text-xs fixed left-0 top-0 translate-x-[-100%] bottom-0 after:content-[''] after:absolute after:top-0 after:right-0 after:w-[1px] after:h-full after:bg-gradient-to-b after:from-primary-shade after:to-transparent overflow-y-auto"
+            tabIndex="-1"
+            className="w-full max-w-[400px] h-screen z-40 bg-slate-900 bg-opacity-100 py-10 pt-14 px-3 flex flex-col gap-4 text-white text-opacity-70 text-xs fixed left-0 top-0 translate-x-[-100%] bottom-0 after:content-[''] after:absolute after:top-0 after:right-0 after:w-[1px] after:h-full after:bg-gradient-to-b after:from-primary-shade after:to-transparent overflow-y-auto overscroll-contain"
           >
             <Image
               id="portfolio_details_image"

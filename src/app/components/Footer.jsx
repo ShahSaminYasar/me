@@ -6,7 +6,7 @@ const Footer = ({ className }) => {
       }`}
     >
       <span>
-        Copyright 2025 &copy;{" "}
+        Copyright {new Date().getFullYear()} &copy;{" "}
         <span className="font-semibold">Shah Samin Yasar</span>
       </span>
     </footer>
