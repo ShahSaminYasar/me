@@ -195,7 +195,9 @@ const About = () => {
             <span className="relative">
               <span className="w-4 h-1 bg-primary-shade rounded-sm absolute top-[50%] -left-5 -translate-y-[50%]"></span>
               🎓 Education:{" "}
-              <span className="font-semibold">College Final Year (2025)</span>
+              <span className="font-semibold">
+                Software Engineering Student, Sylhet Metropolitan University
+              </span>
             </span>
             <span className="relative">
               <span className="w-4 h-1 bg-primary-shade rounded-sm absolute top-[50%] -left-5 -translate-y-[50%]"></span>
