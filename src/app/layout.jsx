@@ -9,8 +9,8 @@ export const metadata = {
   icons: "/favicon.png",
   keywords: [
     "shah samin yasar",
-    "mern stack developer",
     "full stack developer",
+    "mern stack developer",
     "software engineer",
     "developer",
     "web developer",
