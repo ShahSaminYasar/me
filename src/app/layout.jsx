@@ -3,13 +3,14 @@ import { montserrat } from "./lib/fonts";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
-  title: "SHAH SAMIN YASAR - MERN Stack Developer",
+  title: "SHAH SAMIN YASAR - Full Stack Developer",
   description:
     "Portfolio of Shah Samin Yasar - a full stack developer based in Sylhet, Bangladesh",
   icons: "/favicon.png",
   keywords: [
     "shah samin yasar",
     "mern stack developer",
+    "full stack developer",
     "software engineer",
     "developer",
     "web developer",
@@ -26,7 +27,7 @@ export const metadata = {
   authors: [{ name: "Shah Samin Yasar" }],
   metadataBase: new URL("https://shahsaminyasar.vercel.app"),
   openGraph: {
-    title: "SHAH SAMIN YASAR - MERN Stack Developer",
+    title: "SHAH SAMIN YASAR - Full Stack Developer",
     description:
       "Portfolio of Shah Samin Yasar - a full stack developer based in Sylhet, Bangladesh",
     url: "https://shahsaminyasar.vercel.app",
@@ -37,7 +38,7 @@ export const metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Shah Samin Yasar - MERN Stack Developer",
+        alt: "Shah Samin Yasar - Full Stack Developer",
       },
     ],
   },

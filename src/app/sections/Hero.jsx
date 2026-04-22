@@ -24,7 +24,7 @@ const Hero = () => {
         (letter) =>
           `<span style='display: inline-block;'>${
             letter === " " ? "&nbsp;" : letter
-          }</span>`
+          }</span>`,
       )
       ?.join("");
 
@@ -54,7 +54,7 @@ const Hero = () => {
           duration: 0.4,
           stagger: 0.03,
         },
-        "a"
+        "a",
       )
       .to(
         "#title",
@@ -62,7 +62,7 @@ const Hero = () => {
           opacity: 1,
           duration: 0,
         },
-        "a"
+        "a",
       )
       .from(
         "#title",
@@ -71,7 +71,7 @@ const Hero = () => {
           duration: 0.4,
           delay: 0,
         },
-        "a"
+        "a",
       )
       .to(
         "#flag",
@@ -79,7 +79,7 @@ const Hero = () => {
           opacity: 1,
           duration: 0,
         },
-        "a"
+        "a",
       )
       .from(
         "#flag",
@@ -87,7 +87,7 @@ const Hero = () => {
           scaleY: 0,
           duration: 0.2,
         },
-        "a"
+        "a",
       )
       .to(
         "#cta_container",
@@ -96,7 +96,7 @@ const Hero = () => {
           duration: 0,
           delay: 0.1,
         },
-        "a"
+        "a",
       )
       .from(
         "#cv_btn",
@@ -105,7 +105,7 @@ const Hero = () => {
           opacity: 0,
           duration: 0.4,
         },
-        "a"
+        "a",
       )
       .from(
         ".handle",
@@ -115,7 +115,7 @@ const Hero = () => {
           duration: 0.2,
           stagger: 0.1,
         },
-        "a"
+        "a",
       )
       .to(
         "#liveStatusContainer",
@@ -124,7 +124,7 @@ const Hero = () => {
           duration: 1,
           delay: 0.05,
         },
-        "a"
+        "a",
       )
       .to("#scroll_down_indicator", {
         opacity: "15%",
@@ -166,7 +166,7 @@ const Hero = () => {
               id="title"
               className="block text-xl md:text-3xl font-thin opacity-0"
             >
-              MERN Stack Developer
+              Full Stack Developer
             </p>
           </div>
 

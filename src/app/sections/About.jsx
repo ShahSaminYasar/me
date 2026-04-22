@@ -41,7 +41,7 @@ const About = () => {
           opacity: 0,
           duration: 3,
         },
-        "a"
+        "a",
       )
       .from(
         "#about_heading",
@@ -49,7 +49,7 @@ const About = () => {
           y: 100,
           duration: 2.5,
         },
-        "a"
+        "a",
       )
       .from(
         "#about_description",
@@ -58,7 +58,7 @@ const About = () => {
           y: "-100%",
           duration: 2.5,
         },
-        "a"
+        "a",
       );
 
     gsap.from("#about_list > span", {
@@ -130,7 +130,7 @@ const About = () => {
               className={`about_images w-[100%] max-w-[250px] aspect-square rounded-[30%] rotate-[-15deg] overflow-hidden relative`}
             >
               <Image
-                src={`/assets/shah_samin_yasar.jpg`}
+                src={`/assets/shah_samin_yasar_5.jpeg`}
                 width={500}
                 height={500}
                 priority={true}
@@ -138,7 +138,7 @@ const About = () => {
                 className="me_image_one absolute top-0 left-0 w-full h-full object-cover block rotate-[15deg] scale-125"
               />
               <Image
-                src={`/assets/shah_samin_yasar_2.jpg`}
+                src={`/assets/shah_samin_yasar.jpg`}
                 width={500}
                 height={500}
                 priority={true}
@@ -170,7 +170,7 @@ const About = () => {
               id="about_description"
               className="block text-justify text-sm text-white text-opacity-70 font-light"
             >
-              I'm Shah Samin Yasar, a MERN stack developer from Sylhet,
+              I'm Shah Samin Yasar, a full stack developer from Sylhet,
               Bangladesh, with 5+ years of experience. I specialize in building
               industry-level web apps using technologies like React, Next.js,
               Node.js, MongoDB, PostgreSQL etc. Passionate about my work, I
@@ -200,7 +200,7 @@ const About = () => {
             <span className="relative">
               <span className="w-4 h-1 bg-primary-shade rounded-sm absolute top-[50%] -left-5 -translate-y-[50%]"></span>
               💪 I specialize in:{" "}
-              <span className="font-semibold">Next.js, MERN Stack</span>
+              <span className="font-semibold">Next.js, Full Stack</span>
             </span>
             <span className="relative">
               <span className="w-4 h-1 bg-primary-shade rounded-sm absolute top-[50%] -left-5 -translate-y-[50%]"></span>

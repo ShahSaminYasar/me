@@ -18,9 +18,9 @@ const Promo = () => {
 
           <div className="text-white text-center w-full max-w-[500px] flex flex-col items-center gap-2">
             <span className="block text-2xl sm:text-4xl font-semibold">
-              Try out my latest app!
+              Try out my app!
             </span>
-            <p className="text-slate-200 text-xs sm:text-sm font-light">
+            <p className="text-slate-200 text-xs sm:text-sm font-light leading-5">
               Yawmly is a productivity app which will help you plan your entire
               day efficiently and achieve all the goals with boosted focus.
             </p>

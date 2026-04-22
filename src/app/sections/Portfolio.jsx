@@ -33,12 +33,12 @@ const portfolioItems = [
     liveLink: "http://einen-ai.vercel.app",
   },
   {
-    image: "/assets/portfolio/basha_lagbe_ss.gif",
-    title: "Basha Lagbe",
-    languages: "NextJS,React Native,PostgreSQL,React,Prisma",
+    image: "/assets/portfolio/ravetagbd_ss.gif",
+    title: "RaveTagBD",
+    languages: "reactjs,nodejs,expressjs,mongodb, tailwind css",
     description:
-      "Basha Lagbe is an online platform for finding rental houses. Homeowners can post ads for their available rentals, while renters can search for their ideal home using filters like location, number of rooms, rent, and facilities. Users can also save ads to their favorites for later viewing. The platform is available on both web and mobile, though the mobile app is not yet published on the Play Store or App Store. However, the web version is live—feel free to check it out!",
-    liveLink: "https://basha-lagbe.vercel.app",
+      "MERN stack ecommerce website for a clothing store named 'RaveTag' - located in Beanibazar, Sylhet. All the functionalities that a standard ecommerce system requires are present including seperate admin and customer panels. The admin can manage products, orders, users, categories and more. The customer can view products, add to cart, place orders, track orders, etc.",
+    liveLink: "https://ravetagbd.web.app",
   },
   {
     image: "/assets/portfolio/brave_education_uk.jpg",
@@ -49,6 +49,14 @@ const portfolioItems = [
     liveLink: "https://www.braveeducationuk.com",
   },
   {
+    image: "/assets/portfolio/hdc.png",
+    title: "Holy Dental Care",
+    languages: "nextjs,nodejs,expressjs,mongodb",
+    description:
+      "Holy Dental Care is a modern dental clinic located in Sylhet, Bangladesh, founded by Dr. Arifur Rahman, a highly experienced dental surgeon with a strong commitment to patient care and clinical excellence.",
+    liveLink: "https://holy-dental-care.vercel.app",
+  },
+  {
     image: "/assets/portfolio/nurashop.jpg",
     title: "Nurashop (POS)",
     languages: "Next.js, PWA, Postgres",
@@ -57,21 +65,21 @@ const portfolioItems = [
     liveLink: "https://nurashop.vercel.app",
   },
   {
-    image: "/assets/portfolio/ravetagbd_ss.gif",
-    title: "RaveTagBD",
-    languages: "reactjs,nodejs,expressjs,mongodb, tailwind css",
+    image: "/assets/portfolio/basha_lagbe_ss.gif",
+    title: "Basha Lagbe",
+    languages: "NextJS,React Native,PostgreSQL,React,Prisma",
     description:
-      "MERN stack ecommerce website for a clothing store named 'RaveTag' - located in Beanibazar, Sylhet. All the functionalities that a standard ecommerce system requires are present including seperate admin and customer panels. The admin can manage products, orders, users, categories and more. The customer can view products, add to cart, place orders, track orders, etc.",
-    liveLink: "https://ravetagbd.web.app",
+      "Basha Lagbe is an online platform for finding rental houses. Homeowners can post ads for their available rentals, while renters can search for their ideal home using filters like location, number of rooms, rent, and facilities. Users can also save ads to their favorites for later viewing. The platform is available on both web and mobile, though the mobile app is not yet published on the Play Store or App Store. However, the web version is live—feel free to check it out!",
+    liveLink: "https://basha-lagbe.vercel.app",
   },
-  {
-    image: "/assets/portfolio/brave_education_ss.gif",
-    title: "Brave Education",
-    languages: "reactjs,nodejs,expressjs,mongodb",
-    description:
-      "Brave Education is an educational consultancy firm located in Sylhet, Bangladesh. I built this website which serves as their online system for course enrollments. People are able to enroll in the courses/exams by going through a systematic process. At the end payments are being processed in the website to confirm enrollments. Later on, I implemented the feature of result publication of their exams.",
-    liveLink: "https://register.braveeducationbd.com",
-  },
+  // {
+  //   image: "/assets/portfolio/brave_education_ss.gif",
+  //   title: "Brave Education",
+  //   languages: "reactjs,nodejs,expressjs,mongodb",
+  //   description:
+  //     "Brave Education is an educational consultancy firm located in Sylhet, Bangladesh. I built this website which serves as their online system for course enrollments. People are able to enroll in the courses/exams by going through a systematic process. At the end payments are being processed in the website to confirm enrollments. Later on, I implemented the feature of result publication of their exams.",
+  //   liveLink: "https://register.braveeducationbd.com",
+  // },
   {
     image: "/assets/portfolio/nha_ss.png",
     title: "NHA - Landing Page",
@@ -146,7 +154,7 @@ const Portfolio = () => {
             function (e) {
               e.stopPropagation();
             },
-            { passive: true }
+            { passive: true },
           );
         },
       });
