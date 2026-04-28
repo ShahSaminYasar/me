@@ -215,11 +215,11 @@ const About = () => {
               <span className="w-4 h-1 bg-primary-shade rounded-sm absolute top-[50%] -left-5 -translate-y-[50%]"></span>
               😎 Experience: <span className="font-semibold">5+ years</span>
             </span>
-            <span className="relative">
+            {/* <span className="relative">
               <span className="w-4 h-1 bg-primary-shade rounded-sm absolute top-[50%] -left-5 -translate-y-[50%]"></span>
               ⌨ Typing speed:{" "}
               <span className="font-semibold">72 wpm (average)</span>
-            </span>
+            </span> */}
           </div>
         </div>
       </Container>
