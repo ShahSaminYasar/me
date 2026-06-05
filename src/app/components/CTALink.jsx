@@ -1,10 +1,18 @@
 import Link from "next/link";
 import { firaCode } from "../lib/fonts";
 
-const CTALink = ({ children, href = "#", className, ref = null, id = "" }) => {
+const CTALink = ({
+  children,
+  href = "#",
+  className,
+  ref = null,
+  id = "",
+  target = "_self",
+}) => {
   return (
     <Link
       href={href}
+      target={target}
       ref={ref}
       id={id}
       className={`${

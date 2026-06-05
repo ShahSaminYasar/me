@@ -193,9 +193,14 @@ const Hero = () => {
           id="cta_container"
           className="w-full flex flex-row items-center justify-center gap-5 portrait:mt-auto md:mt-7 md:relative opacity-0"
         >
-          <CTALink id="cv_btn" href="#" className={`mr-2 md:mr-3`}>
+          <CTALink
+            id="cv_btn"
+            href="https://drive.google.com/file/d/1KvH3raH4AziRdSAPhnrvSU2Uoj3FieMV/view?usp=sharing"
+            target="_blank"
+            className={`mr-2 md:mr-3`}
+          >
             <IoDocumentOutline />
-            Download CV
+            My Resume
           </CTALink>
 
           <Link
